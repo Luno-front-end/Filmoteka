@@ -19,7 +19,7 @@ module.exports = {
   // Where webpack looks to start building the bundle
   entry: {
       index:  [paths.src + "/index/index.js"],
-      test: [paths.src + '/test/test.js'],
+      test: [paths.src + '/library/library.js'],
 },
   // Where webpack outputs the assets and bundles
   output: {
@@ -42,12 +42,12 @@ module.exports = {
     }),
      new HtmlWebpackPlugin({
       // inject: false,
-      chunks: ['test'],
-      template: paths.src + '/test/test.html', // template file
-      filename: 'test.html', // output file
+      chunks: ['library'],
+      template: paths.src + '/library/library.html', // template file
+      filename: 'library.html', // output file
     }),
     new HtmlWebpackPartialsPlugin(
-      [...partials('index'), ...partials('test')]
+      [...partials('index'), ...partials('library')]
     )
   ],
 
