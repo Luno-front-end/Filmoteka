@@ -1,7 +1,19 @@
 const paths = require("./paths");
-
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const partialArray = ['modal', 'footer', 'main','header']
+function partials (dist, priority='high', array=partialArray) {   
+  return array.map((e)=> {
+    return {
+      path: `./src/partials/${e}.html`,
+      location: 'body',
+      priority: `${priority}`,
+      template_filename: `${dist}.html`
+    }
+})
+}
 
 module.exports = {
   // Where webpack looks to start building the bundle
@@ -34,21 +46,10 @@ module.exports = {
       template: paths.src + '/test/test.html', // template file
       filename: 'test.html', // output file
     }),
+    new HtmlWebpackPartialsPlugin(
+      [...partials('index'), ...partials('test')]
+    )
   ],
-
-  //    new HtmlWebpackPlugin({
-  //     // inject: false,
-  //     chunks: ['index'],
-  //     template: paths.src + '/index/index.html', // template file
-  //     filename: 'index.html', // output file
-  //   }),
-  //   new HtmlWebpackPlugin({
-  //     // inject: false,
-  //     chunks: ['test'],
-  //     template: paths.src + '/test/test.html', // template file
-  //     filename: 'test.html', // output file
-  //   }),
-  // ],
 
   // Determine how modules within the project are treated
   module: {
