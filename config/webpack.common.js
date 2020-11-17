@@ -5,8 +5,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   // Where webpack looks to start building the bundle
-  entry: [paths.src + "/index.js"],
-
+  entry: {
+      index:  [paths.src + "/index/index.js"],
+      test: [paths.src + '/test/test.js'],
+},
   // Where webpack outputs the assets and bundles
   output: {
     path: paths.build,
@@ -22,10 +24,31 @@ module.exports = {
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
-      template: paths.src + "/index.html", // template file
+      chunks: ['index'],
+      template: paths.src + "/index/index.html", // template file
       filename: "index.html", // output file
     }),
+     new HtmlWebpackPlugin({
+      // inject: false,
+      chunks: ['test'],
+      template: paths.src + '/test/test.html', // template file
+      filename: 'test.html', // output file
+    }),
   ],
+
+  //    new HtmlWebpackPlugin({
+  //     // inject: false,
+  //     chunks: ['index'],
+  //     template: paths.src + '/index/index.html', // template file
+  //     filename: 'index.html', // output file
+  //   }),
+  //   new HtmlWebpackPlugin({
+  //     // inject: false,
+  //     chunks: ['test'],
+  //     template: paths.src + '/test/test.html', // template file
+  //     filename: 'test.html', // output file
+  //   }),
+  // ],
 
   // Determine how modules within the project are treated
   module: {
