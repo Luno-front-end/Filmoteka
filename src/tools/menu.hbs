@@ -1,0 +1,26 @@
+{{#each this}}
+<li class="litem">
+    <div class="photo-card">
+        <img src=https://api.themoviedb.org/3/movie/{{id}}?api_key={{key}} alt="" />
+
+        <div class="stats">
+            <p class="stats-item">
+                <i class="material-icons"></i>
+                {{title}}
+            </p>
+            <p class="stats-item">
+                <i class="material-icons">|</i>
+                {{release_date}}
+            </p>
+            {{!-- <p class="stats-item">
+                <i class="material-icons">comment</i>
+                {{comments}}
+            </p>
+            <p class="stats-item">
+                <i class="material-icons">cloud_download</i>
+                {{downloads}} --}}
+            </p>
+        </div>
+    </div>
+</li>
+{{/each}}
