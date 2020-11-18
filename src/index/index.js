@@ -1,4 +1,4 @@
-import '../scss/main.scss'
+import '../sass/main.scss';
 import request from '../js/apiRequest.js';
 
 console.log('number 1');
