@@ -1,3 +1,4 @@
+import '../styles.css';
 import request from '../js/apiRequest.js';
 
 console.log('number 1');
@@ -8,4 +9,4 @@ console.log('number 1');
 // request.searchFilms("matrix")
 // request.getFilmById(26214)
 
-// 
+//
