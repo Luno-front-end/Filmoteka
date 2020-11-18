@@ -1,1 +1,1 @@
-console.log("number 2")
+import '../sass/main.scss';
