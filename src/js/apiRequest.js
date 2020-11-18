@@ -1,15 +1,3 @@
-// /*
-const fetchImg = (query, key) => {
-  // const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${query}&page=${page}&per_page=12&key=${key}`;
-const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${query}`
-  return fetch(url)
-    .then(response => response.json())
-    .then(data => data.results)
-    .catch(err => console.warn(err));
-};
-export default fetchImg;
-// */
-/*
 import axios from 'axios';
 
 export default {
@@ -31,7 +19,7 @@ export default {
       `${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=${query}`
     )
     .then(({ data }) => {
-      return data;
+      return data.results;
     })
     .catch(err => {throw err});
   },
@@ -62,8 +50,3 @@ export default {
     return `https://image.tmdb.org/t/p/${size}${url}`
   }
 };
-*/
-
-// IMG URL
-// "https://image.tmdb.org/t/p/original"
-// "https://image.tmdb.org/t/p/w500"
