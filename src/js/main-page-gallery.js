@@ -33,12 +33,14 @@ request.getTrendFilms()
 // Если в массиве больше елементов чем   номер стр * ко-во ел. на странице, то   
 
 if (ArrayOfFilms.length >= currentPage * getCardsPerPage()) {
+
 let arr = ArrayOfFilms.slice(0, getCardsPerPage());
 const markup = galleryCardTemplate(arr)
 refs.gallery.insertAdjacentHTML('beforeend', markup)
 }
 })
 .catch(err => console.log(error))
+
 function getCardsPerPage (){
 
     if(window.innerWidth < 768 ){
