@@ -1,4 +1,4 @@
-import '../styles.css';
+import '../scss/main.scss'
 import request from '../js/apiRequest.js';
 
 console.log('number 1');
