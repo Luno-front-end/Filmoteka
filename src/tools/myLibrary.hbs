@@ -1,16 +1,16 @@
 {{#each this}}
 <li class="litem">
     <div class="photo-card">
-        <img src=https://api.themoviedb.org/3/movie/{{id}}?api_key={{key}} alt="" />
+        <img src=https://image.tmdb.org/t/p/w500{{poster_path}} alt="" />
 
         <div class="stats">
             <p class="stats-item">
                 <i class="material-icons"></i>
-                {{title}}
+                {{imdb_id}}
             </p>
             <p class="stats-item">
                 <i class="material-icons">|</i>
-                {{release_date}}
+                {{title}}
             </p>
             {{!-- <p class="stats-item">
                 <i class="material-icons">comment</i>
