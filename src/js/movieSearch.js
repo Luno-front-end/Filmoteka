@@ -5,7 +5,7 @@ import '../tools/styles.css';
 let query = '';
 const input = document.querySelector('input');
 const form = document.querySelector('#search-form');
-const gallery = document.querySelector('.gallery');
+const gallery = document.querySelector('.gallery'); // замінить клас
 
 form.addEventListener('submit', renderImages);
 
