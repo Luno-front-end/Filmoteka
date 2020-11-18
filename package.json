@@ -48,6 +48,8 @@
     "postcss-loader": "^4.0.4",
     "postcss-preset-env": "^6.7.0",
     "posthtml": "^0.14.0",
+    "posthtml-include": "^1.6.0",
+    "posthtml-loader": "^2.0.1",
     "sass": "^1.28.0",
     "sass-loader": "^10.0.5",
     "style-loader": "^2.0.0",
