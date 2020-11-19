@@ -1,6 +1,6 @@
 import request from '../js/apiRequest';
 import card from '../Templates/imageCard.hbs';
-import '../tools/styles.css';
+// import '../tools/styles.css';
 
 let query = '';
 const input = document.querySelector('input');
