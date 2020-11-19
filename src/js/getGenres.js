@@ -1,19 +1,44 @@
 import request from './apiRequest'
 
 // Получить список объектов с жанрами
-function createGenresList(arr){
-    request.getApiGenresList().then(({data: genres}) => console.log("genres", genres))
-}
+//  let ids = function getGenresIds(){
+// return request.getApiGenresList();
+// } 
 
+// async function switchGenresList() {
+//     let genresData = await request.getApiGenresList()
+//     const newArr = []
+
+//     const genresNames = genresData.data.genres
+//     genresNames.map((e) => {
+//         if (array.includes(e.id)) {
+//             newArr.push(e.name)
+//         }
+//     })
+
+//     await request.getTrendFilms().then( data => {
+
+//     console.log(data.results);
+
+//     data.results.forEach((e) => {
+//         console.log(e.genre_ids); 
+
+//         // switchGenresList(e.genre_ids).then(arr => {
+//         //     console.log("arr" , arr);
+
+//         // })
+//     })
+//      }
+
+
+
+//    .then(data => console.log('data', data)) // финишь
+// switchGenresList(arr)
+// console.log(switchGenresList(arr));
+// export { switchGenresList }
 
 // Получить Список жанров
 
-request.getTrendFilms().then(data =>{
- const genresList = data.results.map(({genre_ids}) => {
-    console.log(genre_ids);
-    });
-    console.log("film" , genresList)
-    });
 
 // request.getTrendFilms().then(({data: {results: genres}}) => console.log("filmGenres", genres));
 

@@ -5,9 +5,12 @@ import '../js/getGenres'
 import '../js/movieSearch'
 import '../js/myLibrary'
 
-console.log('number 1');
 
+async function a(){
+    return 1
+}
 
+a()
 
 // request.getTrendFilms();
 // request.setPage(25);

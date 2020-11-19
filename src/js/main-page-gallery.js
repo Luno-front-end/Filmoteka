@@ -1,9 +1,7 @@
 import request from './apiRequest.js';
 import galleryCardTemplate from '../templates/gallery-card.hbs'
 import refs from './refs'
-
-
-console.log('number 1');
+import switchGenresList from './getGenres'
 
 // Получить масситв объектов первой страницы 
 // request.getTrendFilms();
@@ -56,7 +54,9 @@ console.log('number 1');
 // console.log(getCardsPerPage());
 
 
-request.getTrendFilms().then( data => {
+
+request.getTrendFilms().then(data => {
+    console.log(data);
     const markup = galleryCardTemplate(data.results)
     refs.gallery.insertAdjacentHTML('beforeend', markup)
 })
