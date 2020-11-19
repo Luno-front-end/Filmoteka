@@ -19,6 +19,7 @@ export default {
       `${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=${query}`
     )
     .then(({ data }) => {
+
       return data;
     })
     .catch(err => {throw err});
@@ -38,9 +39,10 @@ export default {
   getTrendFilms() {
     return axios
       .get(
-        `${this.BASE_URL}/trending/movies/day?api_key=${this.API_KEY}&page=${this.page}&per_page=5`,
+        `${this.BASE_URL}/trending/movies/day?api_key=${this.API_KEY}&page=${this.page}`,
       )
       .then(({ data }) => {
+        // console.log(data);
         return data;
       })
       .catch(err => {throw err});
@@ -48,9 +50,12 @@ export default {
 
   getImgURL(size='original', url){ 
     return `https://image.tmdb.org/t/p/${size}${url}`
+  },
+
+  getApiConfig(){
+    return axios.get(`https://api.themoviedb.org/3/configuration?api_key=${this.API_KEY}`)
+  },
+  getApiGenresList(){
+    return axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.API_KEY}&language=en-US`)
   }
 };
-
-// IMG URL
-// "https://image.tmdb.org/t/p/original"
-// "https://image.tmdb.org/t/p/w500"
