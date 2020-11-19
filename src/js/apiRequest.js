@@ -19,7 +19,7 @@ export default {
       `${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=${query}`
     )
     .then(({ data }) => {
-      return data.results;
+      return data;
     })
     .catch(err => {throw err});
   },
@@ -30,7 +30,7 @@ export default {
       `${this.BASE_URL}/movie/${id}?api_key=${this.API_KEY}`
     )
     .then(({ data }) => {
-      return data.results;
+      return data;
     })
     .catch(err => {throw err});
   },
