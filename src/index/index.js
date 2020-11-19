@@ -1,4 +1,4 @@
-import '../scss/main.scss'
+import '../sass/main.scss'
 import '../js/main-page-gallery'
 import request from '../js/apiRequest.js';
 import '../js/movieSearch'
