@@ -1,3 +1,7 @@
-    {{#each this}}
-      <li class="gallery item"><div class="block"></div></li>
-      {{/each}}
+{{#each this}}
+<li class="home-page-item gallery-item">
+  <img class="home-page-image" src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt="{{title}}" data-src="https://image.tmdb.org/t/p/original{{poster_path}} "">
+  <h2 class="movie-title">{{title}}</h1>
+  <p class="genre">{{genre_ids}}</p>
+</li>
+{{/each}}
