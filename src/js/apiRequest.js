@@ -59,7 +59,3 @@ export default {
     return axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.API_KEY}&language=en-US`)
   }
 };
-
-// IMG URL
-// "https://image.tmdb.org/t/p/original"
-// "https://image.tmdb.org/t/p/w500"
