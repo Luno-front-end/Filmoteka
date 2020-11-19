@@ -5,7 +5,7 @@ import '../js/getGenres'
 import '../js/movieSearch'
 import '../js/myLibrary'
 
-console.log('number 1');
+
 
 
 
