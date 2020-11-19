@@ -50,5 +50,12 @@ export default {
 
   getImgURL(size='original', url){ 
     return `https://image.tmdb.org/t/p/${size}${url}`
+  },
+
+  getApiConfig(){
+    return axios.get(`https://api.themoviedb.org/3/configuration?api_key=${this.API_KEY}`)
+  },
+  getApiGenresList(){
+    return axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.API_KEY}&language=en-US`)
   }
 };
