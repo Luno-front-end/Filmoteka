@@ -1,5 +1,5 @@
-import '../scss/main.scss'
-import '../js/main-page-gallery'
+import '../sass/main.scss';
+import '../js/main-page-gallery';
 import request from '../js/apiRequest.js';
 
 console.log('number 1');

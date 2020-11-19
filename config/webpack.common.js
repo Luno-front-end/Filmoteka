@@ -20,7 +20,7 @@ module.exports = {
   // Where webpack looks to start building the bundle
   entry: {
     index: [paths.src + '/index/index.js'],
-    test: [paths.src + '/library/library.js'],
+    library: [paths.src + '/library/library.js'],
   },
   // Where webpack outputs the assets and bundles
   output: {
