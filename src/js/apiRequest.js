@@ -50,7 +50,3 @@ export default {
     return `https://image.tmdb.org/t/p/${size}${url}`
   }
 };
-
-// IMG URL
-// "https://image.tmdb.org/t/p/original"
-// "https://image.tmdb.org/t/p/w500"
