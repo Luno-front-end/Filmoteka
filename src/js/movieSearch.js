@@ -13,8 +13,8 @@ function renderImages(e) {
   e.preventDefault();
   gallery.innerHTML = '';
   query = input.value;
-  request.searchFilms(query).then(results => {
-    const markup = card(results);
+  request.searchFilms(query).then(data => {
+    const markup = card(data.results);
     gallery.innerHTML = markup;
     form.reset();
   });
