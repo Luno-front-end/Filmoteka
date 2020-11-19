@@ -55,9 +55,8 @@ import switchGenresList from './getGenres'
 
 
 
-
-    
-    
-//     const markup = galleryCardTemplate(data.results)
-//     refs.gallery.insertAdjacentHTML('beforeend', markup)
-// })
+request.getTrendFilms().then(data => {
+    console.log(data);
+    const markup = galleryCardTemplate(data.results)
+    refs.gallery.insertAdjacentHTML('beforeend', markup)
+})

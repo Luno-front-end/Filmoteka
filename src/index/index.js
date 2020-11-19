@@ -6,8 +6,11 @@ import '../js/movieSearch'
 import '../js/myLibrary'
 
 
+async function a(){
+    return 1
+}
 
-
+a()
 
 // request.getTrendFilms();
 // request.setPage(25);
