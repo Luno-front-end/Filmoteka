@@ -1,5 +1,5 @@
 import request from '../js/apiRequest';
-import card from '../tools/imageCard.hbs';
+import card from '../Templates/imageCard.hbs';
 import '../tools/styles.css';
 
 let query = '';
