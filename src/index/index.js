@@ -1,4 +1,5 @@
 import '../scss/main.scss'
+import '../js/main-page-gallery'
 import request from '../js/apiRequest.js';
 
 console.log('number 1');
@@ -8,5 +9,3 @@ console.log('number 1');
 // request.getTrendFilms();
 // request.searchFilms("matrix")
 // request.getFilmById(26214)
-
-//
