@@ -7,41 +7,47 @@
   </head>
 
   <body>
-<header>
-  <div class="bcgimg">
-    <ul class="nav-list standart-ul">
-      <li>
-        <a href="./index.html"
-          ><svg class="icon">
-            <use href="../images/sprite.svg#icon-film"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="logo"><a href="./index.html" class="standart-a">Filmoteka</a></li>
-      <li class="nav active"><a href="./index.html" class="standart-a">Home</a></li>
-      <li class="nav"><a href="./library.html" class="standart-a">my library</a></li>
-    </ul>
-    <div class="search">
-      <input
-        type="text"
-        name="message"
-        placeholder="Поиск фильмов"
-        class="input"
-      />
-      <svg class="icon-search">
-        <use href="../images/sprite.svg#icon-search-2"></use>
-      </svg>
-      <!-- <p>Search result not successful. Enter the correct movie name and</p> -->
-    </div>
-  </div>
-</header>
-<main class="container">
-  <section class="gallery">
-    <ul class="gallery-list">
-    </ul>
-  </section>
-</main>
-
+    <header>
+      <div class="bcgimg">
+        <ul class="nav-list standart-ul">
+          <li>
+            <a href="./index.html"
+              ><svg class="icon">
+                <use href="../images/sprite.svg#icon-film"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="logo">
+            <a href="./index.html" class="standart-a">Filmoteka</a>
+          </li>
+          <li class="nav active">
+            <a href="./index.html" class="standart-a">Home</a>
+          </li>
+          <li class="nav">
+            <a href="./library.html" class="standart-a">my library</a>
+          </li>
+        </ul>
+    
+      <div class="search">
+        <input
+          type="text"
+          name="message"
+          placeholder="Поиск фильмов"
+          class="input"
+        />
+        <svg class="icon-search">
+          <use href="../images/sprite.svg#icon-search-2"></use>
+        </svg>
+      </div>
+      <p class="error">
+        Search result not successful. Enter the correct movie name and
+      </p>
+    </header>
+    <main class="container">
+      <section class="gallery">
+        <ul class="gallery-list"></ul>
+      </section>
+    </main>
 
     <!-- <div class="root">
       <button type="button" class="btn-watched"> watched </button>
@@ -138,7 +144,5 @@
     </div>
     <div id="pagination" class="tui-pagination"></div>
  -->
-
-
   </body>
 </html>
