@@ -1,13 +1,9 @@
 import request from '../js/apiRequest';
-// import card from '../Templates/imageCard.hbs';
 import debounce from 'lodash.debounce';
 import createGallery from './trendFilms';
 import Pagination from 'tui-pagination';
 import refs from './refs'
-
 import { container, getTotalPages } from './pagination';
-
-// замінить клас
 
 const pagination = new Pagination(container);
 let query = ''
@@ -58,3 +54,4 @@ pagination.on('beforeMove', async ({ page }) => {
 //     form.reset();
 //   });
 // }
+
