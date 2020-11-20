@@ -20,13 +20,19 @@ async function renderMainPageGallery() {
       data.results.map(e => {
         //  get right formatt for genres List
         let newGenres = switchGenresList(genresArr, e.genre_ids);
+        e.genre_ids = newGenres;
 
         // get right formatt for date
         if (typeof e.release_date === 'string') {
           const shortDate = e.release_date.slice(0, 4);
           e.release_date = shortDate;
         }
-        e.genre_ids = newGenres;
+
+        // get right formatt for another date
+        if (typeof e.first_air_date === 'string') {
+          const shortFirstAirDate = e.first_air_date.slice(0, 4);
+          e.first_air_date = shortFirstAirDate;
+        }
       });
 
       // create markup
