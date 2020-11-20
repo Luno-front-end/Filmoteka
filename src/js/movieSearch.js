@@ -11,14 +11,17 @@ let query = ''
 searchFilms();
 
 async function searchFilms() {
+   
   refs.input.addEventListener(
+    
     'input',
-    debounce(async () => {
+    debounce(async (e) => {
+     e.preventDefault();
       query = refs.input.value
       const data = await request.searchFilms(refs.input.value)
       refs.galleryList.innerHTML = '';
 
-      if (refs.input.value.length === 1 ) {
+      if (refs.input.value.length <= 1) {
        document.querySelector('.err-search').style.opacity = 1;
       } 
       else{
