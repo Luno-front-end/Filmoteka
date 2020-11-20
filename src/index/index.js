@@ -1,3 +1,4 @@
+import '../js/modal';
 import '../sass/main.scss';
 import '../js/trendFilms';
 import '../js/pagination';
