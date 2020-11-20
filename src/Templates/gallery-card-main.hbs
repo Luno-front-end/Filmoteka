@@ -1,0 +1,12 @@
+{{#each this}}
+<li class="gallery-item">
+  <img class="gallery-image" src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt="{{title}}"
+    data-src="https://image.tmdb.org/t/p/original{{poster_path}}" data-id={{id}}>
+  <h2 class="movie-title">{{title}}{{name}}</h2>
+  <p class="genre">
+    <span class="remove-last-symbol">{{#each genre_ids}} {{this}},{{/each}} </span>
+    <span>| {{release_date}}{{first_air_date}} </span>
+
+    {{!-- <span class="film-vote">{{vote_average}}</span></p> --}}
+</li>
+{{/each}}
