@@ -1,68 +1,86 @@
-h2{
+h2 {
   display: block;
 }
-ul{
+ul {
   list-style: none;
 }
 
-.container{
-  width: 882px;
+.container {
+  margin: 0 auto;
+
+  @media screen and (min-width: 1024px) {
+    width: 882px;
+  }
+  @media screen and (max-width: 1023px) {
+    width: 615px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 280px;
+  }
 }
 
 .gallery {
-    /* background-color: #3b404e; */
-    /* height: 100vh; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .gallery-list {
-    width: 882px;
+  /* background-color: #3b404e; */
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-list {
+  // width: 882px;
+  @media screen and (min-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(1, 1fr);
     grid-gap: 30px;
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(1, 1fr);
+  }
+  padding: 0;
+}
 
-    padding: 0;
-  }
-  .block {
-    background-color: red;
-    width: 100%;
-    height: 100%;
-  }
+.block {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
 
-  .gallery-image{
-    display: block;
-    max-width: 274px;
-    // max-height: 398px;
-  }
+.gallery-image {
+  display: block;
+  max-width: 274px;
+  // max-height: 398px;
+}
 
-  .movie-title{
-    font-family: Roboto;
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: 16px;
-letter-spacing: 0em;
-text-align: left;
-text-transform: uppercase;
-  }
-  .genre{
-    color: #FF6B08;
-    font-family: Roboto;
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: 14px;
-letter-spacing: 0em;
-text-align: left;
-  }
-
-  .film-vote{
-    margin-left: 10px;
-    color: white;
-    background-color: #FF6B01;
-    padding: 1px 6px;
-    border-radius: 5px;
-  }
+.movie-title {
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 10px 0 0px 0;
+}
+.genre {
+  margin-block-start: 5px;
+  margin-block-end: 0;
+  color: #ff6b08;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.film-vote {
+  margin-left: 10px;
+  color: white;
+  background-color: #ff6b01;
+  padding: 1px 6px;
+  border-radius: 5px;
+}

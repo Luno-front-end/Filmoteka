@@ -1,15 +1,10 @@
+import '../js/modal';
 import '../sass/main.scss';
-import '../js/main-page-gallery';
-import request from '../js/apiRequest.js';
+import '../js/trendFilms';
+import '../js/pagination';
 import '../js/getGenres';
 import '../js/movieSearch';
 import '../js/myLibrary';
-
-async function a() {
-  return 1;
-}
-
-a();
 
 // request.getTrendFilms();
 // request.setPage(25);
