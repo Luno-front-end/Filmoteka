@@ -3,18 +3,22 @@ import galleryCardTemplate from '../templates/gallery-card-main.hbs';
 import refs from './refs';
 import switchGenresList from './getGenres';
 
+//  Pagination
+// ===================================
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+import { container, getTotalPages } from './pagination';
 
-import { container, getPaginationOptions } from './pagination.vova';
+const pagination = new Pagination(container);
+// getPaginationOptions(data)
 
 let genresArr = [];
 renderMainPageGallery();
 
 async function renderMainPageGallery() {
   try {
-    // Get genres list
 
+    // Get genres list
     if (genresArr.length === 0) {
       await request.getApiGenresList().then(data => {
         genresArr = data.data.genres;
@@ -23,13 +27,28 @@ async function renderMainPageGallery() {
 
     // get data from API
     request.getTrendFilms().then(data => {
-      const pagination = new Pagination(container, getPaginationOptions(data));
       createGallery(data);
+      pagination.reset(getTotalPages(data));
     });
+
   } catch (error) {
     console.log(err);
   }
 }
+
+pagination.on('beforeMove', async ({ page }) => {
+  refs.galleryList.innerHTML = '';
+
+  // input.addEventListener('input', e => {
+  //   if (e.value !== query) {
+  //     request.setPage(1)
+  //   }
+  // })
+
+  request.setPage(page)
+  const data = await request.getTrendFilms(refs.input.value)
+  createGallery(data);
+})
 
 function createGallery(data) {
   console.log('data', data);
@@ -75,4 +94,5 @@ function createGallery(data) {
     }
   });
 }
+
 export default createGallery;

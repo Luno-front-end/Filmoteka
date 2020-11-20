@@ -16,7 +16,7 @@ export default {
   searchFilms(query) {
     return axios
       .get(
-        `${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=${query}`,
+        `${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=${query}&page=${this.page}`,
       )
       .then(({ data }) => {
         return data;
