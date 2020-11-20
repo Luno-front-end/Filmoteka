@@ -7,8 +7,42 @@
   </head>
 
   <body>
+<header>
+  <div class="bcgimg">
+    <ul class="nav-list standart-ul">
+      <li>
+        <a href="./index.html"
+          ><svg class="icon">
+            <use href="../images/sprite.svg#icon-film"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="logo"><a href="./index.html" class="standart-a">Filmoteka</a></li>
+      <li class="nav active"><a href="./index.html" class="standart-a">Home</a></li>
+      <li class="nav"><a href="./library.html" class="standart-a">my library</a></li>
+    </ul>
+    <div class="search">
+      <input
+        type="text"
+        name="message"
+        placeholder="Поиск фильмов"
+        class="input"
+      />
+      <svg class="icon-search">
+        <use href="../images/sprite.svg#icon-search-2"></use>
+      </svg>
+      <!-- <p>Search result not successful. Enter the correct movie name and</p> -->
+    </div>
+  </div>
+</header>
+<main class="container">
+  <section class="gallery">
+    <ul class="gallery-list">
+    </ul>
+  </section>
+</main>
 
-    <a href="./test.html">next</a>
+
     <div class="root">
       <button type="button" class="btn-watched"> watched </button>
       <button type="button" class="btn-queue"> queue </button>
@@ -16,13 +50,95 @@
       <form class="search-form" id="search-form">
         <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
       </form>
+
       <ul class="gallery"></ul>
     <!-- <img src="../images/img.JPG">
     <svg width="15px" height="15px">
       <use href='../images/sprite.svg#icon-film' ></use>
     </svg>
     <img src="../images/arrow-point-to-right.svg"> -->
-    <a href="./library.html">next</a>
+    <!-- <a href="">next</a> -->
+
+    <!-- 
+    <div class="container-pag">
+      <div class="container-numberPag">
+        <button type="button" data-action="back" class="pagination-btn">
+          <
+        </button>
+        <button type="button" data-action="page" class="number-page">1</button>
+        <button type="button" data-action="page" class="number-page">
+          ...
+        </button>
+        <button type="button" data-action="page" class="number-page">13</button>
+        <button type="button" data-action="page" class="number-page">14</button>
+        <button type="button" data-action="page" class="number-page active">
+          15
+        </button>
+        <button type="button" data-action="page" class="number-page">16</button
+        ><button type="button" data-action="page" class="number-page">17</button
+        ><button type="button" data-action="page" class="number-page">
+          ...</button
+        ><button type="button" data-action="page" class="number-page">
+          20
+        </button>
+        <button type="button" data-action="go" class="pagination-btn">></button>
+      </div>
+    </div> -->
+    <!-- <div id="tui-pagination-container" class="tui-pagination">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="pagination" class="tui-pagination"></div>
+ -->
+
 
   </body>
 </html>

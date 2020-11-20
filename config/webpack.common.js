@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const libraryArray = ['modal', 'footer', 'main', 'header'];
-const indexArray = ['modal', 'footer', 'main', 'header'];
+const indexArray = ['modal', 'footer'];
 function partials(dist, array) {
   return array.map(e => {
     return {
