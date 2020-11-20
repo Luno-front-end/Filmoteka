@@ -1,4 +1,6 @@
-import request from '../js/apiRequest.js';
+import '../js/apiRequest.js';
+import '../js/modal';
+import '../sass/main.scss';
 
 console.log('number 1');
 
