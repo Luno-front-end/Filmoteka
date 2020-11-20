@@ -18,8 +18,14 @@ async function searchFilms() {
       const data = await request.searchFilms(refs.input.value)
       refs.galleryList.innerHTML = '';
 
-      createGallery(data);
-      pagination.reset(getTotalPages(data));
+      if (refs.input.value.length === 1 ) {
+       document.querySelector('.err-search').style.opacity = 1;
+      } 
+      else{
+      document.querySelector('.err-search').style.opacity = 0;
+        createGallery(data);
+        pagination.reset(getTotalPages(data));
+      }
 
     }, 1000)
   )
@@ -38,6 +44,7 @@ pagination.on('beforeMove', async ({ page }) => {
   const data = await request.searchFilms(refs.input.value)
   createGallery(data);
 })
+
 
 // ==============================================
 // form.addEventListener('submit', renderImages);

@@ -158,7 +158,16 @@ input::placeholder {
   align-items: center;
 }
 
+.err-search {   // видалить після завантаження гілки наді
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ff001b;
+  opacity: 0;
+}
 
 .icon.icon-tmbd{
   width:  50px;
 }
+
