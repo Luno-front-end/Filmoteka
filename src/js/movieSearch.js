@@ -11,7 +11,6 @@ let query = ''
 searchFilms();
 
 async function searchFilms() {
-
   refs.input.addEventListener(
     'input',
     debounce(async () => {
