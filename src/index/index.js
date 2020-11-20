@@ -1,13 +1,10 @@
-import '../sass/main.scss'
-import '../js/main-page-gallery'
+import '../sass/main.scss';
+import '../js/trendFilms';
+
 import request from '../js/apiRequest.js';
-import '../js/getGenres'
-import '../js/movieSearch'
-import '../js/myLibrary'
-
-console.log('number 1');
-
-
+import '../js/getGenres';
+import '../js/movieSearch';
+import '../js/myLibrary';
 
 // request.getTrendFilms();
 // request.setPage(25);

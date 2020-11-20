@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default {
   API_KEY: '9bc134247462ae6a5927de0341a3dea9',
-  BASE_URL: "https://api.themoviedb.org/3",
+  BASE_URL: 'https://api.themoviedb.org/3',
   page: 1,
 
   defaultPage() {
@@ -13,27 +13,28 @@ export default {
     this.page = pageValue;
   },
 
-  searchFilms(query){
+  searchFilms(query) {
     return axios
-    .get(
-      `${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=${query}`
-    )
-    .then(({ data }) => {
-
-      return data;
-    })
-    .catch(err => {throw err});
+      .get(
+        `${this.BASE_URL}/search/movie?api_key=${this.API_KEY}&query=${query}`,
+      )
+      .then(({ data }) => {
+        return data;
+      })
+      .catch(err => {
+        throw err;
+      });
   },
 
-  getFilmById(id){
+  getFilmById(id) {
     return axios
-    .get(
-      `${this.BASE_URL}/movie/${id}?api_key=${this.API_KEY}`
-    )
-    .then(({ data }) => {
-      return data;
-    })
-    .catch(err => {throw err});
+      .get(`${this.BASE_URL}/movie/${id}?api_key=${this.API_KEY}`)
+      .then(({ data }) => {
+        return data;
+      })
+      .catch(err => {
+        throw err;
+      });
   },
 
   getTrendFilms() {
@@ -45,17 +46,24 @@ export default {
         console.log(data);
         return data;
       })
-      .catch(err => {throw err});
+      .catch(err => {
+        throw err;
+      });
   },
 
-  getImgURL(size='original', url){ 
-    return `https://image.tmdb.org/t/p/${size}${url}`
+  getImgURL(size = 'original', url) {
+    return `https://image.tmdb.org/t/p/${size}${url}`;
   },
 
-  getApiConfig(){
-    return axios.get(`https://api.themoviedb.org/3/configuration?api_key=${this.API_KEY}`)
+  getApiConfig() {
+    return axios.get(
+      `https://api.themoviedb.org/3/configuration?api_key=${this.API_KEY}`,
+    );
   },
-  getApiGenresList(){
-    return axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.API_KEY}&language=en-US`)
-  }
+
+  getApiGenresList() {
+    return axios.get(
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${this.API_KEY}&language=en-US`,
+    );
+  },
 };

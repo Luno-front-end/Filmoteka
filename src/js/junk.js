@@ -1,11 +1,4 @@
-import request from './apiRequest.js';
-import galleryCardTemplate from '../templates/gallery-card.hbs'
-import refs from './refs'
-
-
-console.log('number 1');
-
-// Получить масситв объектов первой страницы 
+// Получить масситв объектов первой страницы
 // request.getTrendFilms();
 
 // Получить массив объектов заданной страницы
@@ -30,7 +23,7 @@ console.log('number 1');
 // })
 // .then(data => {
 
-// // Если в массиве больше елементов чем   номер стр * ко-во ел. на странице, то   
+// // Если в массиве больше елементов чем   номер стр * ко-во ел. на странице, то
 
 // if (ArrayOfFilms.length >= currentPage * getCardsPerPage()) {
 
@@ -54,9 +47,3 @@ console.log('number 1');
 //     return 9
 // }
 // console.log(getCardsPerPage());
-
-
-request.getTrendFilms().then( data => {
-    const markup = galleryCardTemplate(data.results)
-    refs.gallery.insertAdjacentHTML('beforeend', markup)
-})

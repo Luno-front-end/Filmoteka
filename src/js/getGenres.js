@@ -1,23 +1,25 @@
-import request from './apiRequest'
+import genresList from '../genresList.json';
+// console.log('genresList', genresList);
+// let genresIds = [];
 
+//  =====================================
 // Получить список объектов с жанрами
-function createGenresList(arr){
-    request.getApiGenresList().then(({data: genres}) => console.log("genres", genres))
+// let genresObg = async function () {
+//   return await request
+//     .getApiGenresList()
+//     .then(data => (genresIds = data.data.genres));
+// };
+
+// ====================================
+//  Функция подмены массива из чисел в значение
+
+function switchGenresList(numbersArray = genresList, stringArray) {
+  const newArr = [];
+  numbersArray.map(e => {
+    if (stringArray.includes(e.id)) {
+      newArr.push(e.name);
+    }
+  });
+  return newArr;
 }
-
-
-// Получить Список жанров
-
-request.getTrendFilms().then(data =>{
- const genresList = data.results.map(({genre_ids}) => {
-    console.log(genre_ids);
-    });
-    console.log("film" , genresList)
-    });
-
-// request.getTrendFilms().then(({data: {results: genres}}) => console.log("filmGenres", genres));
-
-// Создать пустой массив
-// Перебрать список жанров, при совпадении занести значение в массив
-// вернуть массив елементов
-// вставить массив елементов в карточку 
+export default switchGenresList;

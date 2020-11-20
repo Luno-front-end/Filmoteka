@@ -1,3 +1,3 @@
 export default {
-    gallery: document.querySelector('.gallery-list'),
-}
+  gallery: document.querySelector('.gallery-list'),
+};
