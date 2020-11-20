@@ -3,9 +3,9 @@ import debounce from 'lodash.debounce';
 import createGallery from './trendFilms';
 import Pagination from 'tui-pagination';
 import refs from './refs'
-import { container, getTotalPages } from './pagination';
+import { getTotalPages , options } from './pagination';
 
-const pagination = new Pagination(container);
+const pagination = new Pagination(refs.container, options);
 let query = ''
 
 searchFilms();
@@ -40,8 +40,6 @@ pagination.on('beforeMove', async ({ page }) => {
   createGallery(data);
 })
 
-
-
 // ==============================================
 // form.addEventListener('submit', renderImages);
 // function renderImages(e) {
@@ -54,4 +52,3 @@ pagination.on('beforeMove', async ({ page }) => {
 //     form.reset();
 //   });
 // }
-
