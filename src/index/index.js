@@ -1,6 +1,6 @@
 import '../sass/main.scss';
 import '../js/trendFilms';
-
+import '../js/pagination.vova';
 import request from '../js/apiRequest.js';
 import '../js/getGenres';
 import '../js/movieSearch';

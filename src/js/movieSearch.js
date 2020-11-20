@@ -1,8 +1,11 @@
 import request from '../js/apiRequest';
-import card from '../Templates/imageCard.hbs';
+// import card from '../Templates/imageCard.hbs';
 import debounce from 'lodash.debounce';
 import createGallery from './trendFilms';
+import Pagination from 'tui-pagination';
 // import '../tools/styles.css';
+
+import { container, getPaginationOptions } from './pagination.vova';
 
 let query = '';
 const input = document.querySelector('input');
@@ -31,7 +34,14 @@ function searchFilms() {
 
       request.searchFilms(inputValue).then(data => {
         galleryList.innerHTML = '';
+
+        const pagination = new Pagination(
+          container,
+          getPaginationOptions(data),
+        );
+
         createGallery(data);
+        pagination.reset();
       });
     }, 1000),
   );

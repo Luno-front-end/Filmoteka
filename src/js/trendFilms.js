@@ -1,7 +1,13 @@
 import request from './apiRequest.js';
-import galleryCardTemplate from '../templates/gallery-card.hbs';
+import galleryCardTemplate from '../templates/gallery-card-main.hbs';
 import refs from './refs';
 import switchGenresList from './getGenres';
+
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
+import { container, getPaginationOptions } from './pagination.vova';
+
 let genresArr = [];
 renderMainPageGallery();
 
@@ -10,19 +16,25 @@ async function renderMainPageGallery() {
     // Get genres list
 
     if (genresArr.length === 0) {
-      await request
-        .getApiGenresList()
-        .then(data => (genresArr = data.data.genres));
+      await request.getApiGenresList().then(data => {
+        genresArr = data.data.genres;
+      });
     }
 
     // get data from API
-    request.getTrendFilms().then(data => createGallery(data));
+    request.getTrendFilms().then(data => {
+      const pagination = new Pagination(container, getPaginationOptions(data));
+      createGallery(data);
+    });
   } catch (error) {
     console.log(err);
   }
 }
 
 function createGallery(data) {
+  console.log('data', data);
+  // initialization pagination
+
   data.results.map(e => {
     //  get right formatt for genres List
     let newGenres = switchGenresList(genresArr, e.genre_ids);
