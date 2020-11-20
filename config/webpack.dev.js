@@ -16,7 +16,7 @@ module.exports = merge(common, {
     // historyApiFallback: true,
     // contentBase: paths.build,
     open: true,
-    // compress: true,
+    compress: true,
     port: 2506,
   },
 
