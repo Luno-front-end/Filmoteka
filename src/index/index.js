@@ -1,13 +1,13 @@
-import '../js/apiRequest.js';
 import '../js/modal';
 import '../sass/main.scss';
-
-console.log('number 1');
+import '../js/trendFilms';
+import '../js/pagination';
+import '../js/getGenres';
+import '../js/movieSearch';
+import '../js/myLibrary';
 
 // request.getTrendFilms();
 // request.setPage(25);
 // request.getTrendFilms();
 // request.searchFilms("matrix")
 // request.getFilmById(26214)
-
-// 

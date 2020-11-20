@@ -40,6 +40,8 @@ pagination.on('beforeMove', async ({ page }) => {
   createGallery(data);
 })
 
+
+
 // ==============================================
 // form.addEventListener('submit', renderImages);
 // function renderImages(e) {

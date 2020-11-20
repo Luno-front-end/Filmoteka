@@ -26,6 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@pnotify/core": "^5.2.0",
     "babel-loader": "^8.1.0",
@@ -61,7 +62,11 @@
     "webpack-merge": "^5.3.0"
   },
   "dependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.12.1",
+    "@babel/runtime": "^7.12.5",
     "axios": "^0.21.0",
-    "core-js": "^3.7.0"
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "core-js": "^3.7.0",
+    "tui-pagination": "^3.4.0"
   }
 }
