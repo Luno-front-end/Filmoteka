@@ -157,3 +157,12 @@ input::placeholder {
   line-height: 16px;
   align-items: center;
 }
+
+.err-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ff001b;
+  opacity: 0;
+}
