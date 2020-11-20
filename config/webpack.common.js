@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const libraryArray = ['modal', 'footer', 'main', 'header'];
-const indexArray = ['modal', 'footer', 'main', 'header'];
+const indexArray = ['modal', 'footer'];
 function partials(dist, array) {
   return array.map(e => {
     return {
@@ -20,7 +20,7 @@ module.exports = {
   // Where webpack looks to start building the bundle
   entry: {
     index: [paths.src + '/index/index.js'],
-    test: [paths.src + '/library/library.js'],
+    library: [paths.src + '/library/library.js'],
   },
   // Where webpack outputs the assets and bundles
   output: {
@@ -82,7 +82,7 @@ module.exports = {
       // Images: Copy image files to build folder
       // { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: "asset/resource" },
       {
-        test: /\.(ico|gif|webp|png|jpe?g|svg)$/i,
+        test: /\.(ico|gif|webp|png|jpe?g)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -97,7 +97,7 @@ module.exports = {
         // type: "asset/resource",
       },
       // Fonts and SVGs: Inline files
-      { test: /\.(woff(2)?|eot|ttf|otf|)$/, type: 'asset/inline' },
+      { test: /\.(woff(2)?|eot|ttf|otf|svg)$/, type: 'asset/inline' },
       {
         test: /\.html$/,
         use: 'html-loader',
