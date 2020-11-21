@@ -1,0 +1,44 @@
+#page {
+  &.tui-page-btn {
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+  }
+
+  &.tui-page-btn.page-btn {
+    display: inline-block;
+    padding: 8px;
+    border: none;
+  }
+
+  &.tui-page-btn.tui-is-selected.active-page-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #ff6b08;
+    color: white;
+    border: none;
+  }
+
+  &.tui-is-disabled {
+    border: none;
+  }
+  // #pagination-img.left{
+  //   width: 32px;
+  //   height: 32px;
+  //   bac
+  //   background-image: url(../images/arrow-left.svg);
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  // }
+  // &.tui-page-btn{
+
+  // }
+}
