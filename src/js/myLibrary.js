@@ -1,39 +1,118 @@
 import request from '../js/apiRequest';
-import cards from "../Templates/gallery-card-library.hbs"; // заглушка
+import refs from "./library-refs"
+import {createGallery} from './createGallery'
+
+//  Pagination
+
+// // ===================================
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
+import {options} from './pagination';
+const pagination = new Pagination(refs.container, options);
+
 
 const btnWatched = document.querySelector('#watched');
 const btnQueue = document.querySelector('#queue'); 
 
-const libraryContainer = document.querySelector(".gallery"); 
-class ButtonsLibrary {
-  constructor(btnName) {
-    this.btnName = btnName;
-    this.btnObject = [ ];
-    this.response = JSON.parse(localStorage.getItem(this.btnName))
+
+const btnWatched = document.querySelector('#watched'); // класс кнопки
+const btnQueue = document.querySelector('#queue'); // класс кнопки
+
+
+getDataFromLocalStorage('watched')
+btnSwitch(btnWatched,btnQueue)
+
+
+btnWatched.addEventListener("click", (e) => {
+  getDataFromLocalStorage('watched')
+  btnSwitch(btnWatched,btnQueue)
+
+
+  
+} )
+btnQueue.addEventListener('click' , (e) => {
+  getDataFromLocalStorage('queue')
+  btnSwitch(btnQueue, btnWatched)
+})
+
+function btnSwitch(btnRefA, btnRefB){
+ btnRefA.classList.add('is-active')
+ btnRefA.setAttribute('disabled','')
+  if  (btnRefA.hasAttribute('active')){
+ btnRefA.removeAttribute('active')
   }
-  cardData() {
-    this.response.map(id => {
-                 return request.getFilmById(id).then(data => {
-                   this.btnObject.push(data)
-                   console.dir(data)
-                 });
-    })
-    this.renderCard()
-  }
-  renderCard() {
-    if (this.btnObject.length === 0) {
-      document.querySelector('.empty-collection').style.opacity = 1;
-    }
-    else{ libraryContainer.innerHTML = cards(this.btnObject);
-    console.log(this.btnObject);
-      document.querySelector('.empty-collection').style.opacity = 0;
-    }
-     }
+ btnRefB.classList.remove('is-active')
+ btnRefB.removeAttribute('disabled')
+ btnRefB.setAttribute('active', '')
 }
 
-const watchedClick = new ButtonsLibrary('watched')
-btnWatched.addEventListener('click', watchedClick.cardData.bind(watchedClick));
+// function btnD
 
-const queueClick = new ButtonsLibrary('queue')
-btnQueue.addEventListener('click', queueClick.cardData.bind(queueClick));
+// // =============================
+// подставить в логику рендера колекции
+
+async function getDataFromLocalStorage(ListName) {
+  try {
+    refs.galleryList.innerHTML= ''
+
+    const response = JSON.parse(localStorage.getItem(ListName))
+    if(response === null){
+      return
+    }
+
+    const responseArr = response.map(id => {
+    return request.getFilmById(id)
+    })
+    const dataArr = await Promise.all(responseArr)
+
+    const amountOfPages = Math.ceil(Number(dataArr.length) /20)
+    pagination.reset(amountOfPages)
+
+    createGallery(dataArr, refs.galleryList)
+    isGalleryEmpty()
+
+  } catch (error) {
+    console.log(error);
+  }
+
+}
+
+function isGalleryEmpty(){
+  if(Number(refs.galleryList.childElementCount) !== 0){
+    refs.emptyNotice.classList.add('is-hidden')
+  }
+  else{
+    refs.emptyNotice.classList.remove("is-hidden")
+  }
+  }
+
+// pagination.on('beforeMove', async ({ page }) => {
+//   refs.galleryList.innerHTML = '';
+
+//   request.setPage(page)
+//   const data = await request.getTrendFilms(refs.input.value)
+//   createGallery(data.results, refs.galleryList);
+// })
+
+
+// // //  Как не стоит писать классы
+// // // =========================================
+// // class ButtonsLibrary {
+// //         constructor(btnName) {
+// //           this.btnName = btnName;
+// //           this.response = JSON.parse(localStorage.getItem(this.btnName))
+// //         }
+// //         cardData() {
+// //           this.
+// //           });
+// //   })
+// // }
+// // }
+
+// // const watchedClick = new ButtonsLibrary('watched')
+// // btnWatched.addEventListener('click', watchedClick.cardData.bind(watchedClick));
+
+// // const queueClick = new ButtonsLibrary('queue')
+// // btnQueue.addEventListener('click', queueClick.cardData.bind(queueClick));
 
