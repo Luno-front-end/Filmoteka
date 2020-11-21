@@ -7,42 +7,62 @@
   </head>
 
   <body>
-<header>
-  <div class="bcgimg">
-    <ul class="nav-list standart-ul">
-      <li>
-        <a href="./index.html"
-          ><svg class="icon">
-            <use href="../images/sprite.svg#icon-film"></use>
+    <header>
+      <div class="bcgimg">
+        <ul class="nav-list standart-ul">
+          <li>
+            <a href="./index.html"
+              ><svg class="icon">
+                <use href="../images/sprite.svg#icon-film"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="logo">
+            <a href="./index.html" class="standart-a">Filmoteka</a>
+          </li>
+          <li class="nav active">
+            <a href="./index.html" class="standart-a">Home</a>
+          </li>
+          <li class="nav">
+            <a href="./library.html" class="standart-a">my library</a>
+          </li>
+        </ul>
+        <div class="search">
+          <input
+            type="text"
+            name="message"
+            placeholder="Поиск фильмов"
+            class="input"
+          />
+          <svg class="icon-search">
+            <use href="../images/sprite.svg#icon-search-2"></use>
           </svg>
-        </a>
-      </li>
-      <li class="logo"><a href="./index.html" class="standart-a">Filmoteka</a></li>
-      <li class="nav active"><a href="./index.html" class="standart-a">Home</a></li>
-      <li class="nav"><a href="./library.html" class="standart-a">my library</a></li>
-    </ul>
-    <div class="search">
-      <input
-        type="text"
-        name="message"
-        placeholder="Поиск фильмов"
-        class="input"
-      />
-      <svg class="icon-search">
-        <use href="../images/sprite.svg#icon-search-2"></use>
-      </svg>
-      <!-- <p>Search result not successful. Enter the correct movie name and</p> -->
-    </div>
-  </div>
-</header>
-<main class="container">
-  <section class="gallery">
-    <ul class="gallery-list">
-    </ul>
-  </section>
-  <div id="pagination" class="tui-pagination"></div>
-</main>
+          <!-- <p>Search result not successful. Enter the correct movie name and</p> -->
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <section class="gallery">
+        <ul class="gallery-list"></ul>
+      </section>
+      <div id="pagination" class="tui-pagination"></div>
+    </main>
 
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <p class="footer-text">&#169; 2020 | All Rights Reserved |</p>
+          <p class="footer-info">
+            &nbsp;Developed with 🧡
+            <a href="https://goit.ua/">by GoIT Students</a>
+          </p>
+          <p class="text-product">
+            This product uses the TMDb API but is not endorsed or certified by
+            TMDb
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <!-- <div class="root">
       <button type="button" class="btn-watched"> watched </button>
@@ -140,9 +160,9 @@
     <div id="pagination" class="tui-pagination"></div>
  -->
 
- <div class="modal js-modal">
-  <span class="modal-overlay"></span>
-  <div class="modal-content"></div>
-</div>
+    <div class="modal js-modal">
+      <span class="modal-overlay"></span>
+      <div class="modal-content"></div>
+    </div>
   </body>
 </html>
