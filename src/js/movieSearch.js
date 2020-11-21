@@ -31,7 +31,6 @@ async function searchFilms() {
         }
       }
       catch (err) {
-        console.dir(err.response.data.errors[0])
         if (refs.input.value.length <= 1 && err) {
           document.querySelector('.err-search').style.opacity = 1;
           document.querySelector('.err-search').textContent=err.response.data.errors[0]
