@@ -1,0 +1,44 @@
+.footer {
+  background-color: $background-color-footer;
+  width: 100%;
+  margin-top: 40px;
+  justify-content: center;
+  @media screen and (min-width: $mobile + 1) {
+    width: $tablets;
+  }
+  @media screen and (min-width: $tablets + 1) {
+    width: $desktop;
+  }
+  @media screen and (min-width: $tablets) {
+    width: 100%;
+  }
+}
+
+.footer-content {
+  padding-top: 29px;
+  padding-bottom: 30px;
+}
+
+.footer-text,
+.footer-info {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  color: $secondery-text-color;
+}
+
+.text-product {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+
+  color: $secondery-text-color;
+}
