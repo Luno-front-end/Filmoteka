@@ -24,9 +24,14 @@ class ButtonsLibrary {
     this.renderCard()
   }
   renderCard() {
-    libraryContainer.innerHTML = cards(this.btnObject);
+    if (this.btnObject.length === 0) {
+      document.querySelector('.empty-collection').style.opacity = 1;
+    }
+    else{ libraryContainer.innerHTML = cards(this.btnObject);
     console.log(this.btnObject);
-  }
+      document.querySelector('.empty-collection').style.opacity = 0;
+    }
+     }
 }
 
 const watchedClick = new ButtonsLibrary('watched')
@@ -34,3 +39,4 @@ btnWatched.addEventListener('click', watchedClick.cardData.bind(watchedClick));
 
 const queueClick = new ButtonsLibrary('queue')
 btnQueue.addEventListener('click', queueClick.cardData.bind(queueClick));
+
