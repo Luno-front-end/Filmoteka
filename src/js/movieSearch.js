@@ -2,21 +2,53 @@ import request from '../js/apiRequest';
 import debounce from 'lodash.debounce';
 import createGallery from './trendFilms';
 
-const input = document.querySelector('input');
-const galleryList = document.querySelector('.gallery-list');
+import Pagination from 'tui-pagination';
+
+import refs from './refs'
+import { getTotalPages , options } from './pagination';
+
+const pagination = new Pagination(refs.container, options);
+let query = ''
 
 searchFilms();
 
 function searchFilms() {
-  input.addEventListener(
-    'input',
-    debounce(() => {
-      const inputValue = input.value;
 
-      request.searchFilms(inputValue).then(data => {
-        galleryList.innerHTML = '';
+    refs.input.addEventListener(
+      'input',
+      debounce(async () => {
+    try {
+      query = refs.input.value
+      const data = await request.searchFilms(refs.input.value)
+      refs.galleryList.innerHTML = '';
+
+      if (refs.input.value.length === 1 ) {
+       document.querySelector('.err-search').style.opacity = 1;
+      } 
+      else{
+      document.querySelector('.err-search').style.opacity = 0;
         createGallery(data);
-      });
-    }, 1000),
-  );
+        pagination.reset(getTotalPages(data));
+      }
+
+    } catch (err) {
+      console.dir(err);
+    }
+      }, 1000)
+    )
 }
+
+pagination.on('beforeMove', async ({ page }) => {
+  refs.galleryList.innerHTML = '';
+
+  refs.input.addEventListener('input', e => {
+    if (e.value !== query) {
+      request.setPage(1)
+    }
+  })
+
+  request.setPage(page)
+  const data = await request.searchFilms(refs.input.value)
+  createGallery(data);
+})
+

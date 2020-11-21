@@ -82,7 +82,7 @@ module.exports = {
       // Images: Copy image files to build folder
       // { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: "asset/resource" },
       {
-        test: /\.(ico|gif|webp|png|jpe?g|svg)$/i,
+        test: /\.(ico|gif|webp|png|jpe?g)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -97,7 +97,7 @@ module.exports = {
         // type: "asset/resource",
       },
       // Fonts and SVGs: Inline files
-      { test: /\.(woff(2)?|eot|ttf|otf|)$/, type: 'asset/inline' },
+      { test: /\.(woff(2)?|eot|ttf|otf|svg)$/, type: 'asset/inline' },
       {
         test: /\.html$/,
         use: 'html-loader',

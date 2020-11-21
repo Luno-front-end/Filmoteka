@@ -10,9 +10,9 @@ import genresList from '../genresList.json';
 //     .then(data => (genresIds = data.data.genres));
 // };
 
-// ====================================
-//  Функция подмены массива из чисел в значение
 
+//  Функция подмены массива из чисел в значение
+// ====================================
 function switchGenresList(numbersArray = genresList, stringArray) {
   const newArr = [];
   numbersArray.map(e => {

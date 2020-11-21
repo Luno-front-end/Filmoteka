@@ -5,8 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>test</title>
   </head>
-
   <body>
-    <a href="./index.html">back</a>
+    <header>
+      <div class="bcgimg-library">
+        <ul class="nav-list standart-ul">
+          <li>
+            <a href="./index.html">
+              <!-- <svg class="icon">
+                <use href="../images/sprite.svg#icon-film"></use>
+              </svg> -->
+              <img class="icon icon-tmbd" src="../images/TMBD.svg" alt="tmbd logo">
+            </a>
+          </li>
+          <li class="logo">
+            <a href="./index.html" class="standart-a">Filmoteka</a>
+          </li>
+          <li class="nav">
+            <a href="./index.html" class="standart-a">Home</a>
+          </li>
+          <li class="nav">
+            <a href="./library.html" class="standart-a library">my library</a>
+          </li>
+        </ul>
+
+        <div class="btn-box">
+          <button id="watched" class="btn btn-watched">Watched</button>
+          <button id="queue" class="btn btn-queue">queue</button>
+        </div>
+      </div>
+    </header>
+
+      <main class="container">
+        <section class="gallery">
+          <ul class="gallery-list">
+          </ul>
+        </section>
+        <div id="pagination" class="tui-pagination"></div>
+        <p class="empty-collection">Your collection is empty atm. Add something!!!</p>
+    </main>
+
+    <div class="modal-container" hidden>
+
+      <button type="button" class="button js-watched-btn ">
+          add to Watched
+      </button>
+  
+      <button type="button" class="button js-queue-btn">
+          add to queue
+      </button>
+  
+  </div> 
   </body>
 </html>

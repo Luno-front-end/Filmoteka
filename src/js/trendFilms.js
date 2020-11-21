@@ -1,28 +1,52 @@
 import request from './apiRequest.js';
-import galleryCardTemplate from '../templates/gallery-card.hbs';
+import galleryCardTemplate from '../templates/gallery-card-main.hbs';
 import refs from './refs';
 import switchGenresList from './getGenres';
+
+//  Pagination
+// ===================================
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
+import {options, getTotalPages} from './pagination';
+const pagination = new Pagination(refs.container, options);
+
 let genresArr = [];
 renderMainPageGallery();
 
 async function renderMainPageGallery() {
   try {
-    // Get genres list
 
+    // Get genres list
     if (genresArr.length === 0) {
-      await request
-        .getApiGenresList()
-        .then(data => (genresArr = data.data.genres));
+      await request.getApiGenresList().then(data => {
+        genresArr = data.data.genres;
+      });
     }
 
     // get data from API
-    request.getTrendFilms().then(data => createGallery(data));
+    request.getTrendFilms().then(data => {
+      createGallery(data);
+      pagination.reset(getTotalPages(data));
+    });
+
   } catch (error) {
     console.log(err);
   }
 }
 
+pagination.on('beforeMove', async ({ page }) => {
+  refs.galleryList.innerHTML = '';
+
+  request.setPage(page)
+  const data = await request.getTrendFilms(refs.input.value)
+  createGallery(data);
+})
+
 function createGallery(data) {
+  console.log('data', data);
+  // initialization pagination
+
   data.results.map(e => {
     //  get right formatt for genres List
     let newGenres = switchGenresList(genresArr, e.genre_ids);
@@ -63,4 +87,5 @@ function createGallery(data) {
     }
   });
 }
+
 export default createGallery;

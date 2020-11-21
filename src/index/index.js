@@ -1,7 +1,7 @@
+import '../js/modal';
 import '../sass/main.scss';
 import '../js/trendFilms';
-
-import request from '../js/apiRequest.js';
+import '../js/pagination';
 import '../js/getGenres';
 import '../js/movieSearch';
 import '../js/myLibrary';
