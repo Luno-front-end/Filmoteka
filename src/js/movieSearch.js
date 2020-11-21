@@ -1,6 +1,6 @@
 import request from '../js/apiRequest';
 import debounce from 'lodash.debounce';
-import createGallery from './trendFilms';
+// import createGallery from './trendFilms';
 
 import Pagination from 'tui-pagination';
 

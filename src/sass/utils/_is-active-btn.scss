@@ -1,0 +1,12 @@
+.is-active{
+    // outline: none;
+    border: none;
+    background-color: $accent-color;
+}
+
+.is-active:hover{
+    box-shadow: none;
+}
+// .is-active:focus{
+//     outline: 2px solid white;
+// }
