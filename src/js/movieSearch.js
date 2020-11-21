@@ -1,7 +1,9 @@
 import request from '../js/apiRequest';
 import debounce from 'lodash.debounce';
 import createGallery from './trendFilms';
+
 import Pagination from 'tui-pagination';
+
 import refs from './refs'
 import { getTotalPages , options } from './pagination';
 
@@ -10,34 +12,30 @@ let query = ''
 
 searchFilms();
 
-async function searchFilms() {
-   
-  refs.input.addEventListener(
-    
-    'input',
-    debounce(async (e) => {
-      try {
-        e.preventDefault();
-        query = refs.input.value
-        const data = await request.searchFilms(refs.input.value)
-        refs.galleryList.innerHTML = '';
-          if (refs.input.value.length <= 1) {
-             document.querySelector('.err-search').style.opacity = 1;
-          }
-        else{       
-          document.querySelector('.err-search').style.opacity = 0;
-          createGallery(data);
-          pagination.reset(getTotalPages(data));
-        }
+function searchFilms() {
+
+    refs.input.addEventListener(
+      'input',
+      debounce(async () => {
+    try {
+      query = refs.input.value
+      const data = await request.searchFilms(refs.input.value)
+      refs.galleryList.innerHTML = '';
+
+      if (refs.input.value.length === 1 ) {
+       document.querySelector('.err-search').style.opacity = 1;
+      } 
+      else{
+      document.querySelector('.err-search').style.opacity = 0;
+        createGallery(data);
+        pagination.reset(getTotalPages(data));
       }
-      catch (err) {
-        if (refs.input.value.length <= 1 && err) {
-          document.querySelector('.err-search').style.opacity = 1;
-          document.querySelector('.err-search').textContent=err.response.data.errors[0]
-        }
-        }
-    }, 1000)
-  )
+
+    } catch (err) {
+      console.dir(err);
+    }
+      }, 1000)
+    )
 }
 
 pagination.on('beforeMove', async ({ page }) => {
