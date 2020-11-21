@@ -6,6 +6,9 @@ main {
 .is-hidden {
   display: none;
 }
+.is-hidden.empty-collection{
+  display: none;
+}
 
 .empty-collection {
   display: inline-block;
