@@ -91,23 +91,5 @@ function isGalleryEmpty(){
 // })
 
 
-// // //  Как не стоит писать классы
-// // // =========================================
-// // class ButtonsLibrary {
-// //         constructor(btnName) {
-// //           this.btnName = btnName;
-// //           this.response = JSON.parse(localStorage.getItem(this.btnName))
-// //         }
-// //         cardData() {
-// //           this.
-// //           });
-// //   })
-// // }
-// // }
 
-// // const watchedClick = new ButtonsLibrary('watched')
-// // btnWatched.addEventListener('click', watchedClick.cardData.bind(watchedClick));
-
-// // const queueClick = new ButtonsLibrary('queue')
-// // btnQueue.addEventListener('click', queueClick.cardData.bind(queueClick));
 
