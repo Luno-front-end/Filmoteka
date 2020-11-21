@@ -4,7 +4,7 @@ import '../js/trendFilms';
 import '../js/pagination';
 import '../js/getGenres';
 import '../js/movieSearch';
-import '../js/myLibrary';
+
 
 // request.getTrendFilms();
 // request.setPage(25);

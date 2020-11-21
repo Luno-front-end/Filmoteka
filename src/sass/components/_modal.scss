@@ -1,3 +1,7 @@
+.modal-open {
+  overflow: hidden;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -9,12 +13,12 @@
 
   opacity: 0;
   pointer-events: none;
-  transform: perspective(600px) rotateX(90deg) scale(0.5);
+  transform: scale(0.5);
 
   &.is-open {
     opacity: 1;
     pointer-events: initial;
-    transform: perspective(600px) rotateX(0) scale(1);
+    transform: scale(1);
   }
 
   &-overlay {
@@ -104,12 +108,6 @@
   }
 }
 
-table,
-tr,
-td {
-  padding: 0;
-}
-
 .modal-info {
   margin-bottom: 10px;
   border-spacing: 0px 10px;
@@ -183,8 +181,6 @@ td {
 }
 
 .modal-buttons button {
-  border: 1px solid #000000;
-
   &:first-child {
     margin-right: 15px;
   }
