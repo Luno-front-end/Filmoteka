@@ -1,7 +1,9 @@
 import request from '../js/apiRequest';
 import debounce from 'lodash.debounce';
 import createGallery from './trendFilms';
+
 import Pagination from 'tui-pagination';
+
 import refs from './refs'
 import { getTotalPages , options } from './pagination';
 
@@ -10,10 +12,12 @@ let query = ''
 
 searchFilms();
 
-async function searchFilms() {
-  refs.input.addEventListener(
-    'input',
-    debounce(async () => {
+function searchFilms() {
+
+    refs.input.addEventListener(
+      'input',
+      debounce(async () => {
+    try {
       query = refs.input.value
       const data = await request.searchFilms(refs.input.value)
       refs.galleryList.innerHTML = '';
@@ -27,8 +31,11 @@ async function searchFilms() {
         pagination.reset(getTotalPages(data));
       }
 
-    }, 1000)
-  )
+    } catch (err) {
+      console.dir(err);
+    }
+      }, 1000)
+    )
 }
 
 pagination.on('beforeMove', async ({ page }) => {

@@ -7,8 +7,8 @@ import switchGenresList from './getGenres';
 // ===================================
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import {options, getTotalPages} from './pagination';
 
+import {options, getTotalPages} from './pagination';
 const pagination = new Pagination(refs.container, options);
 
 let genresArr = [];
