@@ -23,8 +23,8 @@ function clickOnGallery(e) {
   }
 }
 
-function openModal(id) {
-  API
+async function openModal(id) {
+  await API
     .getFilmById(id)
     .then(film => renderModal(film))
     .catch(error => console.log(error));
@@ -35,14 +35,16 @@ function openModal(id) {
   window.addEventListener('keydown', closeModal);  
   refsModal.queue = document.querySelector('.js-watched')
   refsModal.watched = document.querySelector('.js-queue')
-  queue = new AddLocalStorage('queue', id, refs.queue, 'is-active-modal')
-  watched = new AddLocalStorage('watched', id, refs.watched, 'is-active-modal', queue)
+  console.log(refsModal)
+  
+  queue = new AddLocalStorage('queue', id, refsModal.queue, 'is-active-modal')
+  watched = new AddLocalStorage('watched', id, refsModal.watched, 'is-active-modal', queue)
 
-  body.classList.add('modal-open');
-  modal.classList.add('is-open');
+  refs.body.classList.add('modal-open');
+  refs.modal.classList.add('is-open');
   refsModal.queue.addEventListener('click', queue.addLocalStorage.bind(queue));
   refsModal.watched.addEventListener('click', watched.addLocalStorage.bind(watched));
-  modalOverlay.addEventListener('click', closeModal);
+  refs.modalOverlay.addEventListener('click', closeModal);
   window.addEventListener('keyup', closeModal);
 }
 

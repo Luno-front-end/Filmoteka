@@ -4,7 +4,6 @@
 
 <div class="modal-bgcimg">
     <div class="modal-nav-container">
-
         <div class="modal-home">
             <div class="modal-home-item">
                 <a href="./index.html">
@@ -20,40 +19,7 @@
             <div class="modal-nav-item"><a href="./index.html" class="standart-a">Home</a></div>
             <div class="modal-nav-item"><a href="./library.html" class="standart-a">my library</a></div>
         </div>
-
     </div>
-    {{!-- <ul class="nav-list standart-ul"> --}}
-        {{!-- <li>
-            <a href="./index.html">
-                <img class="icon icon-tmbd" src="/src/images/TMBD.svg" alt="tmbd logo">
-            </a>
-        </li> --}}
-        {{!-- <li class="logo">
-            <a href="./index.html" class="standart-a">Filmoteka</a>
-        </li> --}}
-        {{!-- <li class="modal-nav">
-            <a href="./index.html" class="standart-a">Home</a>
-        </li> --}}
-        {{!-- <li class="modal-nav">
-            <a href="./library.html" class="standart-a">my library</a>
-        </li> --}}
-    {{!-- </ul> --}}
-
-
-    {{!-- <div class="nav-modal">
-        <a href="./index.html">
-            <img class="icon-modal icon-tmbd" src="/src/images/TMBD.svg" alt="tmbd-logo" style='margin-right: 10px'>
-        </a>
-    </div>
-    <div class="nav-modal">
-        <a href="./index.html" class="standart-a" style='margin-right: 304px'>Filmoteka</a>
-    </div>
-    <div class="nav-modal">
-        <a href="./index.html" class="standart-a">Home</a>
-    </div>
-    <div class="nav-modal">
-        <a href="./library.html" class="standart-a">my library</a>
-    </div> --}}
 </div>
 
 <div class="modal-container">
@@ -95,8 +61,8 @@
             <p class="modal-overview">{{overview}}</p>
         
             <div class="modal-buttons">
-                <button class="button modal-btn" type="button" data-id='{{id}}' data-action='add'>add to watched</button>
-                <button class="button modal-btn" type="button" data-id='{{id}}' data-action='add'>add to queue</button>
+                <button class="button modal-btn js-watched" type="button" data-id='{{id}}' data-action='add'>add to watched</button>
+                <button class="button modal-btn js-queue" type="button" data-id='{{id}}' data-action='add'>add to queue</button>
             </div>
             </p>
         </div>
