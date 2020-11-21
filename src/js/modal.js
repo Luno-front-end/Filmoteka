@@ -37,8 +37,9 @@ async function openModal(id) {
   refsModal.watched = document.querySelector('.js-queue')
   console.log(refsModal)
   
-  queue = new AddLocalStorage('queue', id, refsModal.queue, 'is-active-modal')
-  watched = new AddLocalStorage('watched', id, refsModal.watched, 'is-active-modal', queue)
+  queue = new AddLocalStorage('queue', id, refsModal.queue, 'js-active-btn')
+  watched = new AddLocalStorage('watched', id, refsModal.watched, 'js-active-btn', queue)
+  console.log("openModal -> queue.amountPage", queue.amountPage)
 
   refs.body.classList.add('modal-open');
   refs.modal.classList.add('is-open');

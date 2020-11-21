@@ -26,17 +26,22 @@ async function searchFilms() {
           if (refs.input.value.length <= 1) {
              document.querySelector('.err-search').style.opacity = 1;
           }
-        else{       
+        else{
           document.querySelector('.err-search').style.opacity = 0;
           createGallery(data);
           pagination.reset(getTotalPages(data));
         }
       }
       catch (err) {
+        console.dir(err)
         console.dir(err.response.data.errors[0])
-        if (refs.input.value.length <= 1 && err) {
+        if (refs.input.value.length <= 1 || err) {
           document.querySelector('.err-search').style.opacity = 1;
-          document.querySelector('.err-search').textContent=err.response.data.errors[0]
+          function ucFirst(str) {
+            if (!str) return str;
+            return str[0].toUpperCase() + str.slice(1);
+          }
+          document.querySelector('.err-search').textContent=ucFirst(err.response.data.errors[0])
         }
         }
     }, 1000)
