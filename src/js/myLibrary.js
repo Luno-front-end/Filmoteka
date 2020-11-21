@@ -11,10 +11,6 @@ import 'tui-pagination/dist/tui-pagination.css';
 import {options} from './pagination';
 const pagination = new Pagination(refs.container, options);
 
-
-// localStorage.setItem('queue', '[625512,612568,625128]')
-// localStorage.setItem('watched', '[625312]')
-
 const btnWatched = document.querySelector('#watched'); // класс кнопки
 const btnQueue = document.querySelector('#queue'); // класс кнопки
 
@@ -26,6 +22,7 @@ btnSwitch(btnWatched,btnQueue)
 btnWatched.addEventListener("click", (e) => {
   getDataFromLocalStorage('watched')
   btnSwitch(btnWatched,btnQueue)
+
 
   
 } )
@@ -94,23 +91,5 @@ function isGalleryEmpty(){
 // })
 
 
-// // //  Как не стоит писать классы
-// // // =========================================
-// // class ButtonsLibrary {
-// //         constructor(btnName) {
-// //           this.btnName = btnName;
-// //           this.response = JSON.parse(localStorage.getItem(this.btnName))
-// //         }
-// //         cardData() {
-// //           this.
-// //           });
-// //   })
-// // }
-// // }
 
-// // const watchedClick = new ButtonsLibrary('watched')
-// // btnWatched.addEventListener('click', watchedClick.cardData.bind(watchedClick));
-
-// // const queueClick = new ButtonsLibrary('queue')
-// // btnQueue.addEventListener('click', queueClick.cardData.bind(queueClick));
 
