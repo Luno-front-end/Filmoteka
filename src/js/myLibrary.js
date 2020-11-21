@@ -1,9 +1,6 @@
 import request from '../js/apiRequest';
 import cards from "../Templates/gallery-card-library.hbs"; // заглушка
 
-// localStorage.setItem('queue', '[625512,612568,625128]')
-// localStorage.setItem('watched', '[625312]')
-
 const btnWatched = document.querySelector('#watched');
 const btnQueue = document.querySelector('#queue'); 
 
