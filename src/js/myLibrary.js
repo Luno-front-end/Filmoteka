@@ -11,11 +11,6 @@ import 'tui-pagination/dist/tui-pagination.css';
 import {options} from './pagination';
 const pagination = new Pagination(refs.container, options);
 
-
-const btnWatched = document.querySelector('#watched');
-const btnQueue = document.querySelector('#queue'); 
-
-
 const btnWatched = document.querySelector('#watched'); // класс кнопки
 const btnQueue = document.querySelector('#queue'); // класс кнопки
 
