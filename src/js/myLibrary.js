@@ -36,9 +36,12 @@ btnQueue.addEventListener('click' , (e) => {
 function btnSwitch(btnRefA, btnRefB){
  btnRefA.classList.add('is-active')
  btnRefA.setAttribute('disabled','')
- btnRefA.removeAttribute('activ')
+  if  (btnRefA.hasAttribute('active')){
+ btnRefA.removeAttribute('active')
+  }
  btnRefB.classList.remove('is-active')
- btnRefB.setAttribute('activ', '')
+ btnRefB.removeAttribute('disabled')
+ btnRefB.setAttribute('active', '')
 }
 
 // function btnD
