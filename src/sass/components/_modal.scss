@@ -238,7 +238,6 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  letter-spacing: 0.09em;
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
@@ -246,6 +245,11 @@
   border-radius: 5px;
   border: 1px solid #000000;
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: 0.09em;
+  }
+
 
   &:hover,
   &:focus {
@@ -324,4 +328,3 @@
   margin-right: 40px;
 }
 }
-
