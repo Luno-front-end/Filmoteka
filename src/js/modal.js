@@ -1,37 +1,39 @@
 import modalMovieTpl from '../templates/modal.hbs';
-import API from './apiRequest';
+import apiRequest from './apiRequest';
+import refs from './refs';
 
+const API = apiRequest
 
-const body = document.querySelector('body');
-const modal = document.querySelector('.js-modal');
-const modalOverlay = document.querySelector('.modal-overlay');
-const modalContent = document.querySelector('.modal-content');
+refs.moviesGallery.addEventListener('click', clickOnGallery);
 
+function clickOnGallery(e) {
+  if (e.target.tagName === 'IMG') {
+    openModal(e.target.dataset.id);
+  }
+}
 
-// const API = new API();
-
-export function openModal(id) {
+function openModal(id) {
   API
-    .singleRequest(id)
-    .then(film => renderPage(film))
+    .getFilmById(id)
+    .then(film => renderModal(film))
     .catch(error => console.log(error));
 
-  body.classList.add('modal-open');
-  modal.classList.add('is-open');
-  modalOverlay.addEventListener('click', closeModal);
-  window.addEventListener('keyup', closeModal);
+  refs.body.classList.add('modal-open');
+  refs.modal.classList.add('is-open');
+  refs.modalOverlay.addEventListener('click', closeModal);
+  window.addEventListener('keydown', closeModal);  
 }
 
 function closeModal({ type, key }) {
   const clearModal = () => {
-    body.classList.remove('modal-open');
-    modal.classList.remove('is-open');
-    modalOverlay.removeEventListener('click', closeModal);
-    window.removeEventListener('keyup', closeModal);
-    modalContent.innerHTML = '';
+    refs.body.classList.remove('modal-open');
+    refs.modal.classList.remove('is-open');
+    refs.modalOverlay.removeEventListener('click', closeModal);
+    window.removeEventListener('keydown', closeModal);
+    refs.modalContent.innerHTML = '';
   };
 
-  if (type === 'keyup') {
+  if (type === 'keydown') {
     if (key === 'Escape') {
       clearModal();
     }
@@ -40,7 +42,7 @@ function closeModal({ type, key }) {
   }
 }
 
-function renderPage(film) {
+function renderModal(film) {
   const markup = modalMovieTpl(film);
-  modalContent.innerHTML = markup;
+  refs.modalContent.innerHTML = markup;
 }
