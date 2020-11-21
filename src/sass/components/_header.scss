@@ -94,7 +94,7 @@
   display: flex;
 }
 .input {
-  background-color: $background-color;
+  background-color: $background-color-search;
   border: none;
   width: 280px;
   height: 16px;
@@ -172,6 +172,7 @@ input::placeholder {
   margin-top: 22px;
   margin-bottom: 0px;
   position: absolute;
+  opacity: 0;
 }
 @media screen and (min-width: 321px) {
   .err-search {
