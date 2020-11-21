@@ -1,13 +1,14 @@
 {{#if poster_path}}
-<img class="popup-poster" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" data-id="{{id}}" data-src="https://image.tmdb.org/t/p/original{{poster_path}}"/>
+<img class="modal-poster" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" data-id="{{id}}"
+    data-src="https://image.tmdb.org/t/p/original{{poster_path}}" />
 {{else}}
-<img class="popup-poster" src="https://dummyimage.com/294x441/f0f0f0/000.jpg&text=YOU%27RE+AWESOME+:)"
+<img class="modal-poster" src="https://dummyimage.com/294x441/f0f0f0/000.jpg&text=YOU%27RE+AWESOME+:)"
     alt="placeholder" />
 {{/if}}
 
-<div class="popup-description">
-    <h2 class="popup-title">{{title}}</h2>
-    <table class="popup-info">
+<div class="modal-description">
+    <h2 class="modal-title">{{title}}</h2>
+    <table class="modal-info">
         <tr>
             <td class="info-title">Vote / Votes</td>
             <td><span class="vote-average">{{vote_average}}</span> /
@@ -28,12 +29,37 @@
         </tr>
     </table>
 
-    <p class="popup-overview-title">About</p>
-    <p class="popup-overview">{{overview}}</p>
+    <p class="modal-overview-title">About</p>
+    <p class="modal-overview">{{overview}}</p>
 
-    <div class="popup-buttons">
-        <button class="button js-watched" type="button" data-id='{{id}}' data-action='add'>add to watched</button>
-        <button class="button js-queue" type="button" data-id='{{id}}' data-action='add'>add to queue</button>
+    <div class="modal-buttons">
+        <button class="button" type="button" data-id='{{id}}' data-action='add'>add to watched</button>
+        <button class="button" type="button" data-id='{{id}}' data-action='add'>add to queue</button>
     </div>
     </p>
 </div>
+
+
+{{!-- 
+
+adult: false
+backdrop_path: "/DnjwdbjdR2c5MFhKv5ZSRf8rDU.jpg"
+genre_ids: (3) ["Horror", "Mystery", "Thriller"]
+id: 546121
+media_type: "movie"
+original_language: "en"
+original_title: "Run"
+overview: "Chloe, a teenager who is confined to a wheelchair, is home schooled by her mother, However, her mother's
+strange behavior doesn't go unnoticed and when Chloe pries into some private papers, she discovers a Change of Name
+Certificate document with her mother's name, Diane Sherman, on it. When Chloe googles "Diane Sherman," the internet
+suddenly disconnnects. Chloe becomes suspicious of all that her mother does, suspecting her of something sinister. She
+decides to go on the run in her wheelchair in a desperate attempt to get away from her."
+popularity: 31.914
+poster_path: "/ducK4LxP6csEHqRv2VeXgvfS10m.jpg"
+release_date: "2020"
+title: "Run"
+video: false
+vote_average: 8.4
+vote_count: 20
+
+--}}
