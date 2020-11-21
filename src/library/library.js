@@ -1,5 +1,5 @@
 import '../sass/main.scss';
-
+import '../js/myLibrary';
 
 const emptyNotice = document.querySelector('.empty-collection');
 const bodyref = document.querySelector('.gallery-list');
