@@ -11,10 +11,6 @@ import 'tui-pagination/dist/tui-pagination.css';
 import {options} from './pagination';
 const pagination = new Pagination(refs.container, options);
 
-
-// localStorage.setItem('queue', '[625512,612568,625128]')
-// localStorage.setItem('watched', '[625312]')
-
 const btnWatched = document.querySelector('#watched'); // класс кнопки
 const btnQueue = document.querySelector('#queue'); // класс кнопки
 
@@ -26,6 +22,7 @@ btnSwitch(btnWatched,btnQueue)
 btnWatched.addEventListener("click", (e) => {
   getDataFromLocalStorage('watched')
   btnSwitch(btnWatched,btnQueue)
+
 
   
 } )
