@@ -1,27 +1,32 @@
 import request from '../js/apiRequest';
-import cards from "../Templates/myLibrary.hbs"; // заглушка
+import cards from "../Templates/gallery-card-library.hbs"; // заглушка
 
-localStorage.setItem('queue', '[625512,612568,625128]')
-localStorage.setItem('watched', '[625312]')
+// localStorage.setItem('queue', '[625512,612568,625128]')
+// localStorage.setItem('watched', '[625312]')
 
-const btnWatched = document.querySelector('#watched'); // класс кнопки
-const btnQueue = document.querySelector('#queue'); // класс кнопки
+const btnWatched = document.querySelector('#watched');
+const btnQueue = document.querySelector('#queue'); 
 
-const libraryContainer = document.querySelector(".gallery"); // js-menu замінить на почактовий класс розмітки
-
+const libraryContainer = document.querySelector(".gallery"); 
 class ButtonsLibrary {
   constructor(btnName) {
     this.btnName = btnName;
+    this.btnObject = [ ];
     this.response = JSON.parse(localStorage.getItem(this.btnName))
   }
   cardData() {
     this.response.map(id => {
                  return request.getFilmById(id).then(data => {
-    const markup = cards(data.results);
-    libraryContainer.innerHTML = markup;
-          });
-      })
-    }
+                   this.btnObject.push(data)
+                   console.dir(data)
+                 });
+    })
+    this.renderCard()
+  }
+  renderCard() {
+    libraryContainer.innerHTML = cards(this.btnObject);
+    console.log(this.btnObject);
+  }
 }
 
 const watchedClick = new ButtonsLibrary('watched')
