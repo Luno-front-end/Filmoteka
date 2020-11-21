@@ -43,7 +43,6 @@ export default {
         `${this.BASE_URL}/trending/movies/day?api_key=${this.API_KEY}&page=${this.page}`,
       )
       .then(({ data }) => {
-        console.log(data);
         return data;
       })
       .catch(err => {

@@ -1,27 +1,44 @@
 import request from '../js/apiRequest';
 import debounce from 'lodash.debounce';
 import createGallery from './trendFilms';
-import Pagination from 'tui-pagination';
-import refs from './refs'
-import { container, getTotalPages } from './pagination';
 
-const pagination = new Pagination(container);
+import Pagination from 'tui-pagination';
+
+import refs from './refs'
+import { getTotalPages , options } from './pagination';
+
+const pagination = new Pagination(refs.container, options);
 let query = ''
 
 searchFilms();
 
 async function searchFilms() {
-
+   
   refs.input.addEventListener(
+    
     'input',
-    debounce(async () => {
-      query = refs.input.value
-      const data = await request.searchFilms(refs.input.value)
-      refs.galleryList.innerHTML = '';
-
-      createGallery(data);
-      pagination.reset(getTotalPages(data));
-
+    debounce(async (e) => {
+      try {
+        e.preventDefault();
+        query = refs.input.value
+        const data = await request.searchFilms(refs.input.value)
+        refs.galleryList.innerHTML = '';
+          if (refs.input.value.length <= 1) {
+             document.querySelector('.err-search').style.opacity = 1;
+          }
+        else{       
+          document.querySelector('.err-search').style.opacity = 0;
+          createGallery(data);
+          pagination.reset(getTotalPages(data));
+        }
+      }
+      catch (err) {
+        console.dir(err.response.data.errors[0])
+        if (refs.input.value.length <= 1 && err) {
+          document.querySelector('.err-search').style.opacity = 1;
+          document.querySelector('.err-search').textContent=err.response.data.errors[0]
+        }
+        }
     }, 1000)
   )
 }
@@ -39,19 +56,4 @@ pagination.on('beforeMove', async ({ page }) => {
   const data = await request.searchFilms(refs.input.value)
   createGallery(data);
 })
-
-
-
-// ==============================================
-// form.addEventListener('submit', renderImages);
-// function renderImages(e) {
-//   e.preventDefault();
-//   gallery.innerHTML = '';
-//   query = input.value;
-//   request.searchFilms(query).then(data => {
-//     const markup = card(data.results);
-//     gallery.innerHTML = markup;
-//     form.reset();
-//   });
-// }
 

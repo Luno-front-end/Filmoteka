@@ -7,10 +7,9 @@ import switchGenresList from './getGenres';
 // ===================================
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import { container, getTotalPages } from './pagination';
 
-const pagination = new Pagination(container);
-// getPaginationOptions(data)
+import {options, getTotalPages} from './pagination';
+const pagination = new Pagination(refs.container, options);
 
 let genresArr = [];
 renderMainPageGallery();
@@ -38,12 +37,6 @@ async function renderMainPageGallery() {
 
 pagination.on('beforeMove', async ({ page }) => {
   refs.galleryList.innerHTML = '';
-
-  // input.addEventListener('input', e => {
-  //   if (e.value !== query) {
-  //     request.setPage(1)
-  //   }
-  // })
 
   request.setPage(page)
   const data = await request.getTrendFilms(refs.input.value)

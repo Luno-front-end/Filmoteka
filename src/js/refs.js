@@ -9,4 +9,5 @@ export default {
   modalOverlay: document.querySelector('.modal-overlay'),
   modalContent: document.querySelector('.modal-content'),
   
+  container: document.getElementById('pagination'),
 };
