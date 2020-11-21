@@ -2,17 +2,13 @@ import modalMovieTpl from '../templates/modal.hbs';
 
 import apiRequest from './apiRequest';
 import refs from './refs';
-// import API from './apiRequest';
 import AddLocalStorage from './AddLocalStorage';
 
 
 const API = apiRequest
 
 refs.moviesGallery.addEventListener('click', clickOnGallery);
-// const body = document.querySelector('body');
-// const modal = document.querySelector('.js-modal');
-// const modalOverlay = document.querySelector('.modal-overlay');
-// const modalContent = document.querySelector('.modal-content');
+
 const refsModal = {}
 let queue = {}
 let watched = {}
@@ -56,11 +52,6 @@ function closeModal({ type, key }) {
     refs.modalOverlay.removeEventListener('click', closeModal);
     window.removeEventListener('keydown', closeModal);
     refs.modalContent.innerHTML = '';
-    // body.classList.remove('modal-open');
-    // modal.classList.remove('is-open');
-    // modalOverlay.removeEventListener('click', closeModal);
-    // window.removeEventListener('keyup', closeModal);
-    // modalContent.innerHTML = '';
     refsModal.queue.removeEventListener('click', queue.addLocalStorage.bind(queue));
     refsModal.watched.removeEventListener('click', watched.addLocalStorage.bind(watched));
   };
