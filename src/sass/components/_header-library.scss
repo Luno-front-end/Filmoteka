@@ -2,7 +2,6 @@
   width: 320px;
   height: 230px;
   background-image: url('../images/header-library/header-library320.jpg');
-  background-color: $background-color;
   background-size: 320px 230px;
   position: relative;
   margin-left: auto;
@@ -53,7 +52,6 @@
 .nav-list {
   display: flex;
 }
-
 .icon {
   width: 24px;
   height: 24px;
@@ -83,6 +81,7 @@
 .nav:last-child {
   margin-right: 0px;
 }
+
 .nav-list .active::after,
 .nav-list .library::after {
   content: '';
