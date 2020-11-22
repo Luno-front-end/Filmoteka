@@ -1,5 +1,6 @@
 import request from '../js/apiRequest';
 import refs from "./library-refs"
+// import galleryCardTemplate from '../Templates/gallery-card-library.hbs'
 import { createGallery } from './createGallery'
 
 //  Pagination
@@ -36,10 +37,6 @@ const options = {
   }
 }
 const pagination = new Pagination(refs.container, options);
-
-// page * 9 - 9
-let page = 1;
-let amountPerPage;
 
 const btnWatched = document.querySelector('#watched'); // класс кнопки
 const btnQueue = document.querySelector('#queue'); // класс кнопки
@@ -124,7 +121,3 @@ pagination.on('beforeMove', async ({ page }) => {
   console.log(page);
   getDataFromLocalStorage(currentListName(), page)
 })
-
-
-
-

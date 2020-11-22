@@ -11,7 +11,6 @@ let query = ''
 
 let genresArr=[]
 
-
 searchFilms();
 
 async function searchFilms() {
