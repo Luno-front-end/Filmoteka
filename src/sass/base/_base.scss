@@ -5,19 +5,21 @@ body {
 }
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  @media screen and (min-width: $mobile) {
-    width: $mobile;
-  }
-  @media screen and (min-width: $tablets) {
-    width: $tablets;
-  }
-  @media screen and (min-width: $desktop) {
-    width: $desktop;
-  }
+  margin: 0 auto;
+  // padding-left: 20px;
+  // padding-right: 20px;
+  // @media screen and (max-width: $tablets - 1) {
+  //   max-width: $mobile;
+  // }
+  // @media screen and (min-width: $mobile) {
+  //   width: $mobile;
+  // }
+  // @media screen and (min-width: $tablets) {
+  //   width: $tablets;
+  // }
+  // @media screen and (min-width: $desktop) {
+  //   width: $desktop;
+  // }
 }
 
 body {
