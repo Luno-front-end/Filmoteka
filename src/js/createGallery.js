@@ -1,14 +1,14 @@
 import switchGenresList from './getGenres';
 import galleryCardTemplate from '../templates/gallery-card-main.hbs';
 
-// let genresArr = [];
 
-function createGallery(dataArray, rootRef, emptyArr=[]) {
+
+function createGallery(dataArray, rootRef, genresArr=[]) {
     // initialization pagination
   
     dataArray.map(e => {
       //  get right formatt for genres List
-      let newGenres = switchGenresList(emptyArr, e.genre_ids);
+      let newGenres = switchGenresList(genresArr, e.genre_ids);
       e.genre_ids = newGenres;
 
   

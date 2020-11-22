@@ -19,13 +19,12 @@ async function renderMainPageGallery() {
     if (genresArr.length === 0) {
       await request.getApiGenresList().then(data => {
         genresArr = data.data.genres;
-        console.log(data.data.genres);
       });
     }
     // get data from API
     request.getTrendFilms().then(data => {
       let newDataArray = data.results
-      console.log(newDataArray);
+
       createGallery(newDataArray, refs.galleryList, genresArr);
       pagination.reset(getTotalPages(data));
     });
@@ -42,4 +41,7 @@ pagination.on('beforeMove', async ({ page }) => {
   const data = await request.getTrendFilms(refs.input.value)
   createGallery(data.results, refs.galleryList, genresArr);
 })
+
+
+export {genresArr}
 

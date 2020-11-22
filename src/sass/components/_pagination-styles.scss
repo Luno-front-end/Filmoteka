@@ -1,11 +1,14 @@
 #page {
   &.tui-pagination{
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 40px;
   }
 
   &.tui-page-btn {
+width: 20px;
+height: 20px;
+
     font-family: Roboto;
     font-size: 12px;
     font-style: normal;
@@ -16,11 +19,40 @@
     background-color: white;
     border-radius: 5px;
     border: none;
+
+    :focus{
+      outline: none;
+      border: 2px solid $accent-color;
+    }
   }
 
+&.tui-next-is-ellip{
+  margin-left: 5px;
+
+  @media screen and (max-width:767px){
+    display: none;
+  }
+}
+
+&.tui-prev,
+&.tui-next{
+  background-color: #F7F7F7;
+  width: 40px;
+  height: 40px;
+}
+
+&.tui-prev{
+  margin-left: 5px;
+  
+}
+&.tui-next{
+  margin-right: 5px;
+}
+
   &.tui-page-btn.page-btn {
-    display: inline-block;
-    padding: 8px;
+    // display: inline-block;
+    padding: 0px;
+    &:not(:last-child) {  margin-left: 5px;}
     border: none;
   }
 
