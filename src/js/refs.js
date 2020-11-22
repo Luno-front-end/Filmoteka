@@ -14,4 +14,6 @@ export default {
   openTeamModal: document.querySelector('.js-open-team-modal'),
   teamModal: document.querySelector('.js-team-modal'),
   blackdropTeamModal: document.querySelector('.team-backdrop'),
+
+  spinner: document.querySelector('.js-spinner')
 };
