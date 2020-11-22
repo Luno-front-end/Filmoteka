@@ -3,15 +3,15 @@
   width: 100%;
   margin-top: 40px;
   justify-content: center;
-  @media screen and (min-width: $mobile + 1) {
-    width: $tablets;
-  }
-  @media screen and (min-width: $tablets + 1) {
-    width: $desktop;
+  @media screen and (max-width: $tablets - 1) {
+    max-width: $tablets - 1;
   }
   @media screen and (min-width: $tablets) {
     width: 100%;
   }
+  // @media screen and (min-width: $desktop) {
+  //   width: ;
+  // }
 }
 
 .footer-content {
