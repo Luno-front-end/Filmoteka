@@ -10,7 +10,6 @@ const pagination = new Pagination(refs.container, options);
 let query = ''
 
 let genresArr=[]
-console.log(genresArr);
 
 searchFilms();
 

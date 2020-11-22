@@ -8,6 +8,10 @@ export default {
     modalOverlay: document.querySelector('.modal-overlay'),
     modalContent: document.querySelector('.modal-content'),
     container: document.getElementById('pagination'),
-    emptyNotice: document.querySelector('.empty-collection')
+    emptyNotice: document.querySelector('.empty-collection'),
+    
+    openTeamModal: document.querySelector('.js-open-team-modal'),
+    teamModal: document.querySelector('.js-team-modal'),
+    backdropTeamModal: document.querySelector('.team-backdrop'),
   };
   
