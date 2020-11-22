@@ -1,42 +1,130 @@
 import request from '../js/apiRequest';
-import cards from "../Templates/gallery-card-library.hbs"; // заглушка
+import refs from "./library-refs"
+import { createGallery } from './createGallery'
 
-// localStorage.setItem('queue', '[625512,612568,625128]')
-// localStorage.setItem('watched', '[625312]')
+//  Pagination
+// // ===================================
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
 
-const btnWatched = document.querySelector('#watched');
-const btnQueue = document.querySelector('#queue'); 
-
-const libraryContainer = document.querySelector(".gallery"); 
-class ButtonsLibrary {
-  constructor(btnName) {
-    this.btnName = btnName;
-    this.btnObject = [ ];
-    this.response = JSON.parse(localStorage.getItem(this.btnName))
-  }
-  cardData() {
-    this.response.map(id => {
-                 return request.getFilmById(id).then(data => {
-                   this.btnObject.push(data)
-                   console.dir(data)
-                 });
-    })
-    this.renderCard()
-  }
-  renderCard() {
-    if (this.btnObject.length === 0) {
-      document.querySelector('.empty-collection').style.opacity = 1;
-    }
-    else{ libraryContainer.innerHTML = cards(this.btnObject);
-    console.log(this.btnObject);
-      document.querySelector('.empty-collection').style.opacity = 0;
-    }
-     }
+function getLenght() {
+  const array = JSON.parse(localStorage.getItem('watched'))
+  return array.length
 }
 
-const watchedClick = new ButtonsLibrary('watched')
-btnWatched.addEventListener('click', watchedClick.cardData.bind(watchedClick));
+const options = {
+  totalItems: getLenght(),
+  itemsPerPage: 12,
+  visiblePages: 5,
+  page: 1,
+  centerAlign: true,
+  firstItemClassName: 'tui-first-child',
+  lastItemClassName: 'tui-last-child',
+  template: {
+    page: "<button id='page' class='tui-page-btn page-btn'>{{page}}</button>",
+    currentPage: '<button id="page" class="tui-page-btn tui-is-selected active-page-btn">{{page}}</button>',
+    moveButton: '<button id="page" class="tui-page-btn tui-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</button>',
+    moreButton: '<button id="page" class="tui-page-btn tui-{{type}}-is-ellip">' +
+      '<span class="tui-ico-ellip">...</span>' +
+      '</button>',
+    disabledMoveButton:
+      '<button id="page" class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+      '<button  class="tui-ico-{{type}}">{{type}}</button>' +
+      '</button>',
+  }
+}
+const pagination = new Pagination(refs.container, options);
 
-const queueClick = new ButtonsLibrary('queue')
-btnQueue.addEventListener('click', queueClick.cardData.bind(queueClick));
+// page * 9 - 9
+let page = 1;
+let amountPerPage;
+
+const btnWatched = document.querySelector('#watched'); // класс кнопки
+const btnQueue = document.querySelector('#queue'); // класс кнопки
+
+let genresArr = []
+
+getDataFromLocalStorage('watched', 2)
+btnSwitch(btnWatched, btnQueue)
+
+
+btnWatched.addEventListener("click", (e) => {
+  getDataFromLocalStorage('watched')
+  btnSwitch(btnWatched, btnQueue)
+})
+
+btnQueue.addEventListener('click', (e) => {
+  currentListName()
+  getDataFromLocalStorage('queue')
+  btnSwitch(btnQueue, btnWatched)
+})
+
+function btnSwitch(btnRefA, btnRefB) {
+  btnRefA.classList.add('is-active')
+  btnRefA.setAttribute('disabled', '')
+
+  if (btnRefA.hasAttribute('active')) {
+    btnRefA.removeAttribute('active')
+  }
+
+  btnRefB.classList.remove('is-active')
+  btnRefB.removeAttribute('disabled')
+  btnRefB.setAttribute('active', '')
+}
+
+// // =============================
+// подставить в логику рендера колекции
+
+async function getDataFromLocalStorage(ListName, page=1) {
+  try {
+    refs.galleryList.innerHTML = ''
+
+    const response = JSON.parse(localStorage.getItem(ListName))
+    if (response === null) {
+      return
+    }
+
+    const amountOfLoad = 12;
+    const firstIndex = page * amountOfLoad - amountOfLoad; 
+    const lastIndex = page * amountOfLoad;
+    const shortResponse = response.slice(firstIndex, lastIndex)
+
+    const responseArr = shortResponse.map(id => {
+      return request.getFilmById(id)
+    })
+
+    const dataArr = await Promise.all(responseArr)
+
+    createGallery(dataArr, refs.galleryList, genresArr)
+    isGalleryEmpty()
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function isGalleryEmpty() {
+  if (Number(refs.galleryList.childElementCount) !== 0) {
+    refs.emptyNotice.classList.add('is-hidden')
+  }
+  else {
+    refs.emptyNotice.classList.remove("is-hidden")
+  }
+}
+
+function currentListName() {
+  if( btnWatched.hasAttributes('disabled') ){return 'watched'}
+  if(btnQueue.hasAttributes('disabled')){return 'queue'}
+}
+
+pagination.on('beforeMove', async ({ page }) => {
+  refs.galleryList.innerHTML = '';
+  console.log(page);
+  getDataFromLocalStorage(currentListName(), page)
+})
+
+
+
 

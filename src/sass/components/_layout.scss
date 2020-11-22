@@ -27,6 +27,8 @@ h2 {
   align-items: center;
 }
 
+
+
 .gallery-list {
   // width: 882px;
   @media screen and (max-width: $tablets - 1) {
@@ -46,6 +48,20 @@ h2 {
     // grid-template-rows: repeat(1, 1fr);
   }
   // padding: 0;
+}
+
+.gallery-item{
+  margin-bottom: 30px;
+  
+  &:last-child{
+    margin-bottom: 0px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0px;
+}
+  
+  
 }
 
 .block {

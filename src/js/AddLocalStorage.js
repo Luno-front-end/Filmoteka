@@ -30,6 +30,7 @@ export default class AddLocalStorage{
         this.queue = queue
         this.button = button
         this.classCSS = classCSS
+        this._amountPage = Math.ceil(JSON.parse(localStorage.getItem(this.listName)).length / 9)
         this.active()
     }
 
@@ -40,6 +41,15 @@ export default class AddLocalStorage{
         }
         this.button.classList.remove(this.classCSS)
         return this.active
+    }
+
+    get amountPage() {
+        return this._amountPage
+    }
+
+    set amountPage(item) {
+        this._amountPage = Math.ceil(JSON.parse(localStorage.getItem(item)).length / 9)
+        return this._amountPage
     }
 
     checkQueue() {
@@ -68,3 +78,7 @@ export default class AddLocalStorage{
     }
 }
 
+// function amountPage(item) {
+//     const maxPage = Math.ceil(JSON.parse(localStorage.getItem(item)).length / 20)
+//     return maxPage
+// }
