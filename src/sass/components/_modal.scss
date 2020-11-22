@@ -1,3 +1,54 @@
+.modal-bgcimg {
+    // display: flex;
+    // justify-content: space-between;
+    width: 320px;
+    height: 230px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.8),
+        rgba(47, 48, 58, 0.8)
+      ), url('/src/images/header-modal/mobile.jpg');
+    background-size: 320px 230px;
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    height: 230px;
+    background-image: url('/src/images/header-modal/tablet.jpg');
+    background-size: 768px 230px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 1024px;
+    height: 230px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.8),
+        rgba(47, 48, 58, 0.8)
+      ), url('/src/images/header-modal/desktop.jpg');
+    background-size: 1024px 230px;
+  }
+}
+
+.modal-container {
+  margin-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-left: 75px;
+    padding-right: 75px;
+    
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
 .modal-open {
   overflow: hidden;
 }
@@ -36,7 +87,7 @@
 
 .modal-content {
   max-width: 320px;
-  padding: 20px;
+  // padding: 20px;
   margin: 20px auto;
   background-color: #f7f7f7;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset;
@@ -45,15 +96,10 @@
 
   @media screen and (min-width: 768px) {
     max-width: 768px;
-    padding: 30px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
   }
 
   @media screen and (min-width: 1024px) {
     max-width: 1024px;
-    padding: 60px 70px;
   }
 
   transform: scale(0.5);
@@ -94,7 +140,8 @@
 }
 
 .modal-title {
-  margin-bottom: 10px;
+  margin: 0;
+  margin-bottom: 20px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.15;
@@ -154,6 +201,7 @@
 }
 
 .modal-overview-title {
+  margin-top: 20px;
   margin-bottom: 10px;
   text-transform: uppercase;
   font-weight: 500;
@@ -184,4 +232,101 @@
   &:first-child {
     margin-right: 15px;
   }
+}
+
+.modal-btn {
+  color: #000000;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    letter-spacing: 0.09em;
+  }
+
+
+  &:hover,
+  &:focus {
+      color: #ffffff;
+      background-color: #FF6B01;
+      
+  }
+}
+
+.js-active-btn {
+  color: #ffffff;
+  background-color: #FF6B01;
+}
+
+.js-inactive-btn {
+  color: #000000;
+  background-color: transparent;
+}
+
+.modal-nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-home {
+  display: flex;
+  margin-left: 20px;
+  align-self: baseline;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 70px;
+    align-self: start;
+  }
+
+  .modal-icon {
+    width: 24px;
+    height: 24px;
+    margin-top: 50px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 47px;
+      width: 50px;
+    }
+  }
+
+  .modal-index {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
+    margin-top: 37px;
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+.modal-nav {
+  display: flex;
+  margin-top: 58px;
+  margin-right: 20px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.15;
+  text-transform: uppercase;
+
+
+  @media screen and (min-width: 768px) {
+    margin-right: 75px;
+  }
+
+  .modal-nav-item:first-child {
+  margin-right: 40px;
+}
 }

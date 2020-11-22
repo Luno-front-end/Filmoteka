@@ -6,5 +6,9 @@
 @import './components/header-library.scss';
 @import './components/modal';
 @import './utils/is-hidden';
-@import './components/pagination-stylees';
+
+@import './components/pagination-styles';
 @import './components/footer.scss';
+
+@import './utils/is-active-btn';
+@import './components/_absent-film'; // @import './components/team';

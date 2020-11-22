@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test</title>
+    <title>My Library</title>
   </head>
   <body>
     <header class="bcg-library">
@@ -30,19 +30,19 @@
 
         <div class="btn-box">
           <button id="watched" class="btn btn-watched">Watched</button>
-          <button id="queue" class="btn btn-queue">queue</button>
+          <button id="queue" class="btn btn-queue">Queue</button>
         </div>
       </div>
     </header>
-
       <main class="container">
         <section class="gallery">
-          <ul class="gallery-list">
+          <ul class="gallery-list js-gallery-list">
           </ul>
         </section>
         <div id="pagination" class="tui-pagination"></div>
         <p class="empty-collection">Your collection is empty atm. Add something!!!</p>
     </main>
+
 
     <div class="modal-container" hidden>
 
@@ -71,6 +71,14 @@
     </div>
   </footer>
 
+
+
+  <div class="modal js-modal">
+    <div class="error-message">Film is missed in DB</div>
+    <span class="modal-overlay"></span>
+    <div class="modal-content"></div>
+  </div>
+  
 
   </body>
 </html>
