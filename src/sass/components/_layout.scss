@@ -24,6 +24,8 @@ h2 {
 }
 
 .gallery-item {
+  cursor: pointer;
+
   margin-bottom: 30px;
 
   &:last-child {

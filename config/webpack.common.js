@@ -87,7 +87,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              name: '[path][name].[ext]',
+              name: 'images/[name].[ext]',
               limit: 8192,
               esModule: false,
             },

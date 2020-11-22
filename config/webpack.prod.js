@@ -1,26 +1,26 @@
-const paths = require('./paths')
-const { merge } = require('webpack-merge')
-const common = require('./webpack.common.js')
+const paths = require('./paths');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
-  mode: "production",
+  mode: 'production',
   // devtool: false,
-  devtool: "source-map",
+  devtool: 'source-map',
   output: {
     path: paths.build,
-    publicPath: "./",
-    filename: "js/[name].[contenthash].js",
+    publicPath: './',
+    filename: 'js/[name].[contenthash].js',
   },
   plugins: [
     // Extracts CSS into separate files
     // Note: style-loader is for development, MiniCssExtractPlugin is for production
     new MiniCssExtractPlugin({
-      filename: "styles/[name].[contenthash].css",
-      chunkFilename: "[id].css",
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].css',
     }),
   ],
   module: {
@@ -30,15 +30,15 @@ module.exports = merge(common, {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               importLoaders: 2,
               // sourceMap: false,
               sourceMap: true,
             },
           },
-          "postcss-loader",
-          "sass-loader",
+          'postcss-loader',
+          'sass-loader',
         ],
       },
     ],
@@ -50,7 +50,7 @@ module.exports = merge(common, {
     // instead of having their own. This also helps with long-term caching, since the chunks will only
     // change when actual code changes, not the webpack runtime.
     runtimeChunk: {
-      name: "runtime",
+      name: 'runtime',
     },
   },
   performance: {

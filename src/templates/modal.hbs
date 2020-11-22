@@ -7,7 +7,7 @@
         <div class="modal-home">
             <div class="modal-home-item">
                 <a href="./index.html">
-                    <img class="modal-icon" src="/src/images/TMBD.svg" alt="tmbd logo">
+                    <img class="modal-icon" src="./images/TMBD.svg" alt="tmbd logo">
                 </a>
             </div>
             <div class="modal-home-item modal-index">
@@ -24,48 +24,50 @@
 
 <div class="modal-container">
 
-        <div class="modal-img-container">
-            {{#if poster_path}}
-            <img class="modal-poster" src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="{{original_title}}" data-id="{{id}}"
-                data-src="https://image.tmdb.org/t/p/original{{poster_path}}" />
-            {{else}}
-            <img class="modal-poster" src="https://dummyimage.com/294x441/f0f0f0/000.jpg&text=YOU%27RE+AWESOME+:)"
-                alt="placeholder" />
-            {{/if}}
+    <div class="modal-img-container">
+        {{#if poster_path}}
+        <img class="modal-poster" src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="{{original_title}}"
+            data-id="{{id}}" data-src="https://image.tmdb.org/t/p/original{{poster_path}}" />
+        {{else}}
+        <img class="modal-poster" src="https://dummyimage.com/294x441/f0f0f0/000.jpg&text=YOU%27RE+AWESOME+:)"
+            alt="placeholder" />
+        {{/if}}
+    </div>
+
+    <div class="modal-description">
+        <h2 class="modal-title">{{title}}</h2>
+        <table class="modal-info">
+            <tr>
+                <td class="info-title">Vote / Votes</td>
+                <td><span class="vote-average">{{vote_average}}</span> /
+                    <span class="vote-count">{{vote_count}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="info-title">Popularity</td>
+                <td>{{popularity}}</td>
+            </tr>
+            <tr>
+                <td class="info-title">Original Title</td>
+                <td class="original-title">{{original_title}}</td>
+            </tr>
+            <tr>
+                <td class="info-title">Genre</td>
+                <td class="info-genre">{{#each genres}} {{name}}{{#unless @last}},{{/unless}} {{/each}}</td>
+            </tr>
+        </table>
+
+        <p class="modal-overview-title">About</p>
+        <p class="modal-overview">{{overview}}</p>
+
+        <div class="modal-buttons">
+            <button class="button modal-btn js-watched" type="button" data-id='{{id}}' data-action='add'>add to
+                watched</button>
+            <button class="button modal-btn js-queue" type="button" data-id='{{id}}' data-action='add'>add to
+                queue</button>
         </div>
-        
-        <div class="modal-description">
-            <h2 class="modal-title">{{title}}</h2>
-            <table class="modal-info">
-                <tr>
-                    <td class="info-title">Vote / Votes</td>
-                    <td><span class="vote-average">{{vote_average}}</span> /
-                        <span class="vote-count">{{vote_count}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info-title">Popularity</td>
-                    <td>{{popularity}}</td>
-                </tr>
-                <tr>
-                    <td class="info-title">Original Title</td>
-                    <td class="original-title">{{original_title}}</td>
-                </tr>
-                <tr>
-                    <td class="info-title">Genre</td>
-                    <td class="info-genre">{{#each genres}} {{name}}{{#unless @last}},{{/unless}} {{/each}}</td>
-                </tr>
-            </table>
-        
-            <p class="modal-overview-title">About</p>
-            <p class="modal-overview">{{overview}}</p>
-        
-            <div class="modal-buttons">
-                <button class="button modal-btn js-watched" type="button" data-id='{{id}}' data-action='add'>add to watched</button>
-                <button class="button modal-btn js-queue" type="button" data-id='{{id}}' data-action='add'>add to queue</button>
-            </div>
-            </p>
-        </div>
+        </p>
+    </div>
 
 </div>
 
