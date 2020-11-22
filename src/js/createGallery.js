@@ -1,8 +1,13 @@
 import switchGenresList from './getGenres';
 import galleryCardTemplate from '../templates/gallery-card-main.hbs';
+import spinner from './spinner';
+import refs from './refs';
 
 function createGallery(dataArray, rootRef, genresArr = []) {
   // initialization pagination
+
+  // spinner activation
+  spinner.spinnerOn(refs.spinner)
 
   dataArray.map(e => {
 
@@ -50,6 +55,9 @@ function createGallery(dataArray, rootRef, genresArr = []) {
       img.setAttribute('height', '400px');
     }
   });
+
+  // hide the spinner
+  spinner.spinnerOff(refs.spinner)
 }
 
 export { createGallery }

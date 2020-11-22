@@ -43,7 +43,7 @@ const btnQueue = document.querySelector('#queue'); // класс кнопки
 
 let genresArr = []
 
-getDataFromLocalStorage('watched', 2)
+getDataFromLocalStorage('watched', 1)
 btnSwitch(btnWatched, btnQueue)
 
 

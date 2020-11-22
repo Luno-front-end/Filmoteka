@@ -36,52 +36,7 @@
       max-width: $desktop;
     }
   }
-  // @media screen and (max-width: $tablets - 1) {
-  //   max-width: $tablets - 1;
-  //   height: 230px;
-  //   background-image: url('../images/header-library/header-library.jpg');
-  //   background-size: cover;
-  //   background-position: center;
-
-  //   background-repeat: no-repeat;
-  //   margin-bottom: 20px;
-  // }
-
-  // @media screen and (max-width: $desktop - 1) {
-  //   max-width: $desktop - 1;
-  //   height: 230px;
-  //   background-image: url('../images/header-library/header-library.jpg');
-  //   background-size: cover;
-  //   background-position: center;
-
-  //   background-repeat: no-repeat;
-  //   margin-bottom: 20px;
-  // }
-
-  // display: flex;
-  // flex-direction: column;
-  // width: 320px;
-  // height: 230px;
-  // background-image: url('../images/header-library/header-library320.jpg');
-  // background-size: 320px 230px;
 }
-
-// @media screen and (min-width: $mobile + 1) {
-//   .bcgimages-library {
-//     width: 768px;
-//     height: 230px;
-//     background-image: url('../images/header-library/header-library768.jpg');
-//     background-size: 768px 230px;
-//   }
-// }
-// @media screen and (min-width: $tablets + 1) {
-//   .bcgimg-library {
-//     width: 1024px;
-//     height: 230px;
-//     background-image: url('../images/header-library/header-library1024.jpg');
-//     background-size: 1024px 230px;
-//   }
-// }
 
 .nav-lib {
   display: flex;
@@ -109,15 +64,11 @@
   }
 }
 
-// .icon-lib .icon-tmbd {
-//   width: 50px;
-// }
 .icon-lib {
   width: 35px;
   height: 24px;
   padding-top: 46px;
   padding-left: 21px;
-  // margin-right: 112px;
 }
 
 @media screen and (min-width: $mobile + 1) {
@@ -129,7 +80,6 @@
 
 .nav-library {
   display: flex;
-  // margin-left: auto;
   justify-content: flex-end;
 }
 
@@ -144,8 +94,6 @@
   position: relative;
 }
 .nav-list {
-  // margin-top: 58px;
-  // margin-right: 39px;
   padding-right: 20px;
   display: flex;
   margin-left: auto;
@@ -174,7 +122,6 @@
 .btn-box {
   display: flex;
   padding-top: 49px;
-  // padding-bottom: 65px;
   justify-content: center;
 }
 .btn {
