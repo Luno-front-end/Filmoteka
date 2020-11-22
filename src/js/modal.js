@@ -23,7 +23,10 @@ async function openModal(id) {
   await API
     .getFilmById(id)
     .then(film => renderModal(film))
-    .catch(error => console.log(error));
+    .catch(error => {
+        // если Error вывести на экран сообщение "Missed in Db" 
+      console.log(error)
+    });
 
   refs.body.classList.add('modal-open');
   refs.modal.classList.add('is-open');
@@ -66,5 +69,7 @@ function closeModal({ type, key }) {
 
 function renderModal(film) {
   const markup = modalMovieTpl(film);
+  console.log('film', film);
+  console.log('markup', markup);
   refs.modalContent.innerHTML = markup;
 }
