@@ -10,4 +10,8 @@ export default {
   modalContent: document.querySelector('.modal-content'),
   
   container: document.getElementById('pagination'),
+
+  openTeamModal: document.querySelector('.js-open-team-modal'),
+  teamModal: document.querySelector('.js-team-modal'),
+  blackdropTeamModal: document.querySelector('.team-backdrop'),
 };
