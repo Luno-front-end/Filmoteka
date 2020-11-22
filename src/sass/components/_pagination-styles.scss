@@ -1,4 +1,10 @@
 #page {
+  &.tui-pagination{
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+  }
+
   &.tui-page-btn {
     font-family: Roboto;
     font-size: 12px;
@@ -28,8 +34,17 @@
   }
 
   &.tui-is-disabled {
+    display: none;
     border: none;
   }
+  &.tui-first,
+  &.tui-last{
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+
   // #pagination-img.left{
   //   width: 32px;
   //   height: 32px;
