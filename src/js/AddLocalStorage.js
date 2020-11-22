@@ -55,6 +55,7 @@ export default class AddLocalStorage{
     checkQueue() {
         this.queue.newLocalStorageArray = [...this.queue.localStorageArray.filter(id => id !== this.id)]
         localStorage.setItem('queue', JSON.stringify(this.queue.newLocalStorageArray))
+        this.queue.button.classList.remove(this.classCSS)
         this.queue.isActive = false
     }
 
@@ -77,8 +78,3 @@ export default class AddLocalStorage{
         this.active()
     }
 }
-
-// function amountPage(item) {
-//     const maxPage = Math.ceil(JSON.parse(localStorage.getItem(item)).length / 20)
-//     return maxPage
-// }
