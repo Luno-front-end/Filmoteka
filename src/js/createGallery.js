@@ -1,8 +1,6 @@
 import switchGenresList from './getGenres';
 import galleryCardTemplate from '../templates/gallery-card-main.hbs';
 
-
-
 function createGallery(dataArray, rootRef, genresArr=[]) {
     // initialization pagination
   

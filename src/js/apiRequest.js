@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 export default {
+  // GOOD_API_KEY: '132f2a543c82d69a556f0bb280a697a7',
+  BAD_API_KEY: "9bc134247462ae6a5927de0341a3dea9",
   API_KEY: '9bc134247462ae6a5927de0341a3dea9',
   BASE_URL: 'https://api.themoviedb.org/3',
   page: 1,
@@ -40,7 +42,7 @@ export default {
   getTrendFilms() {
     return axios
       .get(
-        `${this.BASE_URL}/trending/movies/day?api_key=${this.API_KEY}&page=${this.page}`,
+        `${this.BASE_URL}/trending/movie/day?api_key=${this.API_KEY}&page=${this.page}`,
       )
       .then(({ data }) => {
         return data;
