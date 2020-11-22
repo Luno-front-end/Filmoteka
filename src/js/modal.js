@@ -34,7 +34,6 @@ async function openModal(id) {
   window.addEventListener('keydown', closeModal);  
   refsModal.queue = document.querySelector('.js-queue')
   refsModal.watched = document.querySelector('.js-watched')
-  console.log(refsModal)
   
   queue = new AddLocalStorage('queue', id, refsModal.queue, 'js-active-btn')
   watched = new AddLocalStorage('watched', id, refsModal.watched, 'js-active-btn', queue)
