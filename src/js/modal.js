@@ -39,12 +39,14 @@ async function openModal(id) {
   queue = new AddLocalStorage('queue', id, refsModal.queue, 'js-active-btn')
   watched = new AddLocalStorage('watched', id, refsModal.watched, 'js-active-btn', queue)
 
-  refs.body.classList.add('modal-open');
-  refs.modal.classList.add('is-open');
+  // refs.body.classList.add('modal-open');
+  // refs.modal.classList.add('is-open');
+
   refsModal.queue.addEventListener('click', queue.addLocalStorage.bind(queue));
   refsModal.watched.addEventListener('click', watched.addLocalStorage.bind(watched));
-  refs.modalOverlay.addEventListener('click', closeModal);
-  window.addEventListener('keyup', closeModal);
+
+  // refs.modalOverlay.addEventListener('click', closeModal);
+  // window.addEventListener('keyup', closeModal);
 }
 
 function closeModal({ type, key }) {
