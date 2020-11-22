@@ -9,7 +9,6 @@ function createGallery(dataArray, rootRef, genresArr=[]) {
       let newGenres = switchGenresList(genresArr, e.genre_ids);
       e.genre_ids = newGenres;
 
-  
       // get right formatt for date
       if (typeof e.release_date === 'string') {
         const shortDate = e.release_date.slice(0, 4);
