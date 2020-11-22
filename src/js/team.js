@@ -3,7 +3,8 @@ import refs from './refs';
 
 refs.openTeamModal.addEventListener('click', openModal);
 
-function openModal() {
+function openModal(e) {
+  e.preventDefault();
   window.addEventListener('keydown', escKey);
   refs.blackdropTeamModal.addEventListener('click', blackdropClick);
   refs.body.classList.add('modal-team-open');
