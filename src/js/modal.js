@@ -23,19 +23,21 @@ async function openModal(id) {
   await API
     .getFilmById(id)
     .then(film => renderModal(film))
-    .catch(error => console.log(error));
+    .catch(error => {
+        // если Error вывести на экран сообщение "Missed in Db" 
+      console.log(error)
+    });
 
   refs.body.classList.add('modal-open');
   refs.modal.classList.add('is-open');
   refs.modalOverlay.addEventListener('click', closeModal);
   window.addEventListener('keydown', closeModal);  
-  refsModal.queue = document.querySelector('.js-watched')
-  refsModal.watched = document.querySelector('.js-queue')
+  refsModal.queue = document.querySelector('.js-queue')
+  refsModal.watched = document.querySelector('.js-watched')
   console.log(refsModal)
   
   queue = new AddLocalStorage('queue', id, refsModal.queue, 'js-active-btn')
   watched = new AddLocalStorage('watched', id, refsModal.watched, 'js-active-btn', queue)
-  console.log("openModal -> queue.amountPage", queue.amountPage)
 
   // refs.body.classList.add('modal-open');
   // refs.modal.classList.add('is-open');
@@ -69,5 +71,7 @@ function closeModal({ type, key }) {
 
 function renderModal(film) {
   const markup = modalMovieTpl(film);
+  console.log('film', film);
+  console.log('markup', markup);
   refs.modalContent.innerHTML = markup;
 }

@@ -26,7 +26,7 @@
 
         <div class="modal-img-container">
             {{#if poster_path}}
-            <img class="modal-poster" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" data-id="{{id}}"
+            <img class="modal-poster" src="https://image.tmdb.org/t/p/original{{poster_path}}" alt="{{original_title}}" data-id="{{id}}"
                 data-src="https://image.tmdb.org/t/p/original{{poster_path}}" />
             {{else}}
             <img class="modal-poster" src="https://dummyimage.com/294x441/f0f0f0/000.jpg&text=YOU%27RE+AWESOME+:)"
