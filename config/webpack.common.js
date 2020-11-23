@@ -3,19 +3,6 @@ const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const libraryArray = ['modal', 'footer', 'main', 'header'];
-const indexArray = ['modal', 'footer'];
-function partials(dist, array) {
-  return array.map(e => {
-    return {
-      path: `./src/partials/${dist}/${e}.html`,
-      location: 'body',
-      priority: `high`,
-      template_filename: `${dist}.html`,
-    };
-  });
-}
-
 module.exports = {
   // Where webpack looks to start building the bundle
   entry: {
@@ -47,10 +34,6 @@ module.exports = {
       template: paths.src + '/library/library.html', // template file
       filename: 'library.html', // output file
     }),
-    new HtmlWebpackPartialsPlugin([
-      ...partials('index', indexArray),
-      ...partials('library', libraryArray),
-    ]),
   ],
 
   // Determine how modules within the project are treated

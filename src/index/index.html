@@ -7,63 +7,62 @@
   </head>
 
   <body>
-
     <header class="bcgimg">
       <div class="container">
         <nav class="nav-list-index nav-container">
-        
- <ul class="standart-ul list-logoInd">
-           <li class="logo-liInd">
-                <a href="./index.html"
-              >
-               <img class="icon-home icon-tmbd" src="../images/TMBD.svg" alt="tmbd logo" width="35" height="24">
-            </a>
-           </li>
-          
-          
-          <li>  <a href="./index.html" class="standart-a logo">Filmoteka</a></li>
-         
+          <ul class="standart-ul list-logoInd">
+            <li class="logo-liInd">
+              <a href="./index.html">
+                <img
+                  class="icon-home icon-tmbd"
+                  src="../images/TMBD.svg"
+                  alt="tmbd logo"
+                  width="35"
+                  height="24"
+                />
+              </a>
+            </li>
 
- </ul>
-        <ul class="nav-list-indexFlex standart-ul">
-          
-          <li class="nav-index active">
-            <a href="./index.html" class="standart-a">Home</a>
-          </li>
-          <li class="nav-index">
-            <a href="./library.html" class="standart-a">my library</a>
-          </li>
-        </ul>
-
+            <li>
+              <a href="./index.html" class="standart-a logo">Filmoteka</a>
+            </li>
+          </ul>
+          <ul class="nav-list-indexFlex standart-ul">
+            <li class="nav-index active">
+              <a href="./index.html" class="standart-a">Home</a>
+            </li>
+            <li class="nav-index">
+              <a href="./library.html" class="standart-a">my library</a>
+            </li>
+          </ul>
         </nav>
-    
-      <div class="search">
-        <input
-          type="text"
-          name="message"
-          placeholder="Поиск фильмов"
-          class="input"
-        />
-        <svg class="icon-search">
-          <use href="../images/sprite.svg#icon-search-2"></use>
-        </svg>
+
+        <div class="search">
+          <input
+            type="text"
+            name="message"
+            placeholder="Поиск фильмов"
+            class="input"
+          />
+          <svg class="icon-search">
+            <use href="../images/sprite.svg#icon-search-2"></use>
+          </svg>
+        </div>
+        <p class="err-search">
+          Search result not successful. Enter the correct movie name and
+        </p>
       </div>
-      <p class="err-search">
-        Search result not successful. Enter the correct movie name and
-      </p>
     </header>
-
-
     <main class="container">
       <div class="spinner circles js-spinner">
-	      <div></div>
-	      <div></div>
-	      <div></div>
-	      <div></div>
-	      <div></div>
-	      <div></div>
-	      <div></div>
-	      <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
       <section class="gallery">
         <ul class="standart-ul gallery-list js-gallery-list"></ul>
@@ -78,7 +77,7 @@
           <p class="footer-info">
             &nbsp;Developed with 🧡by
             <a class="js-open-team-modal" href="#">GoIT Students</a>
-            </p>
+          </p>
           <p class="text-product">
             This product uses the TMDb API but is not endorsed or certified by
             TMDb
@@ -87,55 +86,75 @@
       </div>
     </footer>
 
-
-
     <div class="modal js-modal">
       <span class="modal-overlay"></span>
       <div class="modal-content"></div>
     </div>
     <div class="modal js-modal">
-  <div class="error-box">
-    <span class="error-message">Film is missed in DB ¯\_(ツ)_/¯
-</span>
-  </div>
-  <span class="modal-overlay"></span>
-  <div class="modal-content"></div>
-</div>
+      <div class="error-box">
+        <span class="error-message">Film is missed in DB ¯\_(ツ)_/¯ </span>
+      </div>
+      <span class="modal-overlay"></span>
+      <div class="modal-content"></div>
+    </div>
 
-<!-- <p class="footer-info">
-  &nbsp;Developed with 🧡 by
-  <a class="js-open-modal" href="#" data-modal-open>GoIT Students</a>
-</p> -->
-
-<!-- <div class="backdrop js-backdrop">
-  <div class="modal"> -->
-
-    <!-- <div class="backdrop is-hidden" data-modal>
-      <div class="modal-overlay"> -->
-
- <!-- цю силку видалите коли Маріна запостить свій футер -->
-  <!-- <a class="js-open-team-modal" href="#">GoIT Students</a> -->
-
-
-
-<div class="team-backdrop is-hiddden js-team-modal">
-  <div class="team-modal">
-      <h2 class="team-title">Team Developers</h2>
-      <h3 class="team-position">Team Leader</h3>
-      <p class="team-item"><a class="link" href="https://github.com/Luno-front-end" target="_blank">Maksym Zaika</a></p>
-      <h3 class="team-position">Developers</h3>
-      <ul class="team-list standart-ul">
-        <li class="team-item"><a class="link" href="https://github.com/mdcreator" target="_blank">Marina Domashenko</a></li>
-        <li class="team-item"><a class="link" href="https://github.com/NadyaGlushchenko" target="_blank">Nadya Glushchenko</a></li>
-        <li class="team-item"><a class="link" href="https://github.com/TOR968" target="_blank">Maxim Turbal</a></li>
-        <li class="team-item"><a class="link" href="https://github.com/mrpembroke" target="_blank">Dmytro Petrenko</a></li>
-        <li class="team-item"><a class="link" href="https://github.com/Warness" target="_blank">Volodimir Kornieiev</a></li>
-        <li class="team-item"><a class="link" href="https://github.com/rostislav228" target="_blank">Rostislav Pershyn</a></li>
-        <li class="team-item"><a class="link" href="https://github.com/Mr-Serzh" target="_blank">Serhii Hayvoronskyi</a></li>
-      </ul>
-  </div>
-</div>
-
-
+    <div class="team-backdrop is-hiddden js-team-modal">
+      <div class="team-modal">
+        <h2 class="team-title">Team Developers</h2>
+        <h3 class="team-position">Team Leader</h3>
+        <p class="team-item">
+          <a
+            class="link"
+            href="https://github.com/Luno-front-end"
+            target="_blank"
+            >Maksym Zaika</a
+          >
+        </p>
+        <h3 class="team-position">Developers</h3>
+        <ul class="team-list standart-ul">
+          <li class="team-item">
+            <a class="link" href="https://github.com/mdcreator" target="_blank"
+              >Marina Domashenko</a
+            >
+          </li>
+          <li class="team-item">
+            <a
+              class="link"
+              href="https://github.com/NadyaGlushchenko"
+              target="_blank"
+              >Nadya Glushchenko</a
+            >
+          </li>
+          <li class="team-item">
+            <a class="link" href="https://github.com/TOR968" target="_blank"
+              >Maxim Turbal</a
+            >
+          </li>
+          <li class="team-item">
+            <a class="link" href="https://github.com/mrpembroke" target="_blank"
+              >Dmytro Petrenko</a
+            >
+          </li>
+          <li class="team-item">
+            <a class="link" href="https://github.com/Warness" target="_blank"
+              >Volodimir Kornieiev</a
+            >
+          </li>
+          <li class="team-item">
+            <a
+              class="link"
+              href="https://github.com/rostislav228"
+              target="_blank"
+              >Rostislav Pershyn</a
+            >
+          </li>
+          <li class="team-item">
+            <a class="link" href="https://github.com/Mr-Serzh" target="_blank"
+              >Serhii Hayvoronskyi</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
