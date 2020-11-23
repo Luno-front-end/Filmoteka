@@ -6,7 +6,6 @@
     <title>Filmoteka My Library</title>
   </head>
   <body>
-
     <header class="bcgimg-library">
       <div class="container">
         <div class="nav-conteiner">
@@ -21,47 +20,8 @@
                     width="35"
                     height="24"
                   />
-                  <!-- <svg class="icon-home icon-tmbd">
-                                <use href="../images/TMBD.svg"></use>
-                              </svg> -->
                 </a>
               </li>
-
-        <header class="bcgimg-library">
-          <div class="container">
-            <div class="nav-conteiner">
-              <nav class="nav-list-index">
-              
-                <ul class="standart-ul list-logoInd">
-                  <li class="logo-liInd">
-                    <a href="./index.html">
-                      <img class="icon-home icon-tmbd" src="../images/TMBD.svg" alt="tmbd logo" width="35" height="24">
-                    </a>
-                  </li>
-              
-              
-                  <li> <a href="./index.html" class="standart-a logo">Filmoteka</a></li>
-              
-              
-                </ul>
-                <ul class="nav-list-indexFlex standart-ul">
-              
-                  <li class="nav-index">
-                    <a href="./index.html" class="standart-a">Home</a>
-                  </li>
-                  <li class="nav-index">
-                    <a href="./library.html" class="library standart-a">my library</a>
-                  </li>
-                </ul>
-              
-              </nav>
-            </div>
-            
-    
-      <div class="btn-box">
-        <button id="watched" class="btn btn-watched">Watched</button>
-        <button id="queue" class="btn btn-queue">queue</button>
-
 
               <li>
                 <a href="./index.html" class="standart-a logo">Filmoteka</a>
@@ -86,28 +46,25 @@
         </div>
       </div>
     </header>
-
-      <main class="container">
-        <div class="spinner circles js-spinner">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <section class="gallery">
-          <ul class="standart-ul gallery-list js-gallery-list">
-          </ul>
-        </section>
-        <div id="pagination" class="tui-pagination"></div>
-        <p class="empty-collection">Your collection is empty atm. Add something!!!</p>
-
+    <main class="container">
+      <div class="spinner circles js-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <section class="gallery">
+        <ul class="standart-ul gallery-list js-gallery-list"></ul>
+      </section>
+      <div id="pagination" class="tui-pagination"></div>
+      <p class="empty-collection">
+        Your collection is empty atm. Add something!!!
+      </p>
     </main>
-
-    <div class="modal-container" hidden></div>
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-content">
@@ -123,8 +80,6 @@
         </div>
       </div>
     </footer>
-
-
     <div class="modal js-modal">
       <div class="error-message">Film is missed in DB</div>
       <span class="modal-overlay"></span>
@@ -132,65 +87,69 @@
     </div>
 
     <div class="modal-container" hidden>
-      
-
-
-    <div class="team-backdrop is-hiddden js-team-modal">
-      <div class="team-modal">
-        <h2 class="team-title">Team Developers</h2>
-        <h3 class="team-position">Team Leader</h3>
-        <p class="team-item">
-          <a
-            class="link"
-            href="https://github.com/Luno-front-end"
-            target="_blank"
-            >Maksym Zaika</a
-          >
-        </p>
-        <h3 class="team-position">Developers</h3>
-        <ul class="team-list standart-ul">
-          <li class="team-item">
-            <a class="link" href="https://github.com/mdcreator" target="_blank"
-              >Marina Domashenko</a
-            >
-          </li>
-          <li class="team-item">
+      <div class="team-backdrop is-hiddden js-team-modal">
+        <div class="team-modal">
+          <h2 class="team-title">Team Developers</h2>
+          <h3 class="team-position">Team Leader</h3>
+          <p class="team-item">
             <a
               class="link"
-              href="https://github.com/NadyaGlushchenko"
+              href="https://github.com/Luno-front-end"
               target="_blank"
-              >Nadya Glushchenko</a
+              >Maksym Zaika</a
             >
-          </li>
-          <li class="team-item">
-            <a class="link" href="https://github.com/TOR968" target="_blank"
-              >Maxim Turbal</a
-            >
-          </li>
-          <li class="team-item">
-            <a class="link" href="https://github.com/mrpembroke" target="_blank"
-              >Dmytro Petrenko</a
-            >
-          </li>
-          <li class="team-item">
-            <a class="link" href="https://github.com/Warness" target="_blank"
-              >Volodimir Kornieiev</a
-            >
-          </li>
-          <li class="team-item">
-            <a
-              class="link"
-              href="https://github.com/rostislav228"
-              target="_blank"
-              >Rostislav Pershyn</a
-            >
-          </li>
-          <li class="team-item">
-            <a class="link" href="https://github.com/Mr-Serzh" target="_blank"
-              >Serhii Hayvoronskyi</a
-            >
-          </li>
-        </ul>
+          </p>
+          <h3 class="team-position">Developers</h3>
+          <ul class="team-list standart-ul">
+            <li class="team-item">
+              <a
+                class="link"
+                href="https://github.com/mdcreator"
+                target="_blank"
+                >Marina Domashenko</a
+              >
+            </li>
+            <li class="team-item">
+              <a
+                class="link"
+                href="https://github.com/NadyaGlushchenko"
+                target="_blank"
+                >Nadya Glushchenko</a
+              >
+            </li>
+            <li class="team-item">
+              <a class="link" href="https://github.com/TOR968" target="_blank"
+                >Maxim Turbal</a
+              >
+            </li>
+            <li class="team-item">
+              <a
+                class="link"
+                href="https://github.com/mrpembroke"
+                target="_blank"
+                >Dmytro Petrenko</a
+              >
+            </li>
+            <li class="team-item">
+              <a class="link" href="https://github.com/Warness" target="_blank"
+                >Volodimir Kornieiev</a
+              >
+            </li>
+            <li class="team-item">
+              <a
+                class="link"
+                href="https://github.com/rostislav228"
+                target="_blank"
+                >Rostislav Pershyn</a
+              >
+            </li>
+            <li class="team-item">
+              <a class="link" href="https://github.com/Mr-Serzh" target="_blank"
+                >Serhii Hayvoronskyi</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
